@@ -484,6 +484,7 @@ if testended!=0:
                     qreached=qreached+1
                     print("CORRECT!")
                     print("\n")
+                    print(result())
                     break
                 elif(enteredans105050=="D"):
                     testended=0
@@ -499,5 +500,3 @@ if testended!=0:
             break
         else:
             print("\nPlease Enter a Valid Input.")
-            
-print(result())
