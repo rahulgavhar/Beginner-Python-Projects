@@ -6,45 +6,34 @@ qreached=0
 fflimit=3 #lifeline left
 testended=1
 #RESULTS
-def result():
+def result(name):
     if qreached == 0:
-            percentage=100
-            print("\nCongratulations ",name," !!","\nYour probability of Failing in UPSE is ",percentage,"%\nJara Padhai Likhai Karo. IAYAS Bano.")
+            return "\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"100"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 1:
-            percentage=99
-            print("\nCongratulations ",name," !!","\nYour probability of Failing in UPSE is ",percentage,"%\nJara Padhai Likhai Karo. IAYAS Bano.")
+            return "\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"99"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 2:
-            percentage=92
-            print("\nCongratulations ",name," !!","\nYour probability of Failing in UPSE is ",percentage,"%\nJara Padhai Likhai Karo. IAYAS Bano.")
+            return "\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"92"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 3:
-            percentage=86
-            print("\nCongratulations ",name," !!","\nYour probability of Failing in UPSE is ",percentage,"%\nJara Padhai Likhai Karo. IAYAS Bano.")
+            return "\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"86"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 4:
-            percentage=72
-            print("\nCongratulations ",name," !!","\nYour probability of Failing in UPSE is ",percentage,"%\nJara Padhai Likhai Karo. IAYAS Bano.")
+            return "\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"72"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 5:
-            percentage=66
-            print("\nCongratulations ",name," !!","\nYour probability of Failing in UPSE is ",percentage,"%\nJara Padhai Likhai Karo. IAYAS Bano.")
+            return "\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"66"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 6:
-            percentage=47
-            print("\nCongratulations ",name," !!","\nYour probability of Failing in UPSE is ",percentage,"%\nJara Padhai Likhai Karo. IAYAS Bano.")
+            return "\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"47"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 7:
-            percentage=31
-            print("\nCongratulations ",name," !!","\nYour probability of Failing in UPSE is ",percentage,"%\nJara Padhai Likhai Karo. IAYAS Bano.")
+            return "\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"31"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 8:
-            percentage=20
-            print("\nCongratulations ",name," !!","\nYour probability of Failing in UPSE is ",percentage,"%\nJara Padhai Likhai Karo. IAYAS Bano.")
+            return "\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"20"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 9:
-            percentage=8
-            print("\nCongratulations ",name," !!","\nYour probability of Failing in UPSE is ",percentage,"%\nJara Padhai Likhai Karo. IAYAS Bano.")
+            return "\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"8"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 10:
-            percentage=0
-            print("\nCongratulations ",name," !!","\nYour probability of Failing in UPSE is ",percentage,"%\nKeep It Up!")
+            print("\nCongratulations ",name," !!","\nYour probability of Failing in UPSE is ","0","%\nKeep It Up!")
 print("\n")
 
 data=("Q1. Among whom of the following does the Indian Constitution permit to take part in the proceedings of Parliament?","A. Solicitor General","B. Attorney General", "C. Cabinet Secretary","D. Cheif Justice","Q2. Who, in 1978, became the first person to be born in the continent of Antarctica?","A. Emilio Palma","B. James Weddell","C. Amilio Gander", "D. Charles Wilkes","Q3. Which colonial power ended its involvement in India by selling the rights of the Nicobar islands to the British on October 18, 1868?","A. Belgium","B. Denmark","C. Italy","D. France","Q4. Who is the first women to successfully climb K2, the world's second highest mountain peak?","A. Junko Tabei","B. Wanda Rutkiewicz","C. Tamae Wantanabe","D. Cantal Mauduit","Q5. Which poet in the court of Mughal Ruler Bahadur Shah Zafar wrote the \'Dastan-e-Ghadar\', a personal account of the 1857 revolt?","A. Mir Taqi Mir","B. Mohammad Ibrahim Zauq","C. Zahir Dehlvi","D. Abdul- Qasim Ferdowsi","Q6. The Historic Indo-Pak talks of 1972 between Indira Gandhi and Zulfikar Ali Bhutto were at which place in Shimla?","A. Viceregal Lodge","B. Gorton Castle","C. Barnes Court","D. Cecil Hotel","Q7. Where in SIngapore did Netaji Subhash Chandara Bose make the first proclamation of an Ajad Hind government?","A. Cathay Cinema Hall","B. Fort Canning PArk","C. National University of Singapore","D. National Gallery of Singapore","Q8. Milinda-Panha is a dialogue between King Menander or Milinda and which buddhist monk?","A. Asanga","B. Nagasena","C. Mahadharmarakshita","D. Dharmarakshita","Q9. Which was the first mountain peak above 8,000 meters in height to be submitted by Human?","A. Annapurna","B. Lhotse","C. Kanchenjunga","D. Makalu","Last Question!! What is the title of the Thesis that Dr. B R Ambedkar submitted to the LOndon School of Economics for which he was awarded his doctorate in 1923?","A. The wants and means of India","B. The problem of the Rupee","C. National Dividend of India","D. The Law and Lawyers")
 
-print("*Important Instructions*\nType in the Option A,B,C,D whichever you think is Correct.\nYou have only Three 50-50 Life Lines (One Life Line per Question.)\nEnter \"5050\" to use it.")
+print("*Important Instructions*\nType in the Option A,B,C,D whichever you think is Correct.\nYou have only Three 50-50 Life Lines (One Life Line per Question.)\nEnter \"5050\" to use it.\nYou lose, if you enter the Wrong Option.")
 print("\n")
 input("(press ENTER key to begin)")
 print("\n")
@@ -81,18 +70,18 @@ if testended!=0:
                     break
                 elif(enteredans15050=="D"):
                     testended=0
-                    print(result())
+                    print(result(str(name)))
                     break
                 else:
-                    print("\nPlease Enter a Valid Input.")
+                    print("\nInvalid Input")
                     
             break
         elif(enteredans1=="A" or enteredans1=="C" or enteredans1=="D"):
             testended=0
-            print(result())
+            print(result(str(name)))
             break
         else:
-            print("\nPlease Enter a Valid Input.")
+            print("\nInvalid Input")
 
 #2
 if testended!=0:
@@ -110,7 +99,7 @@ if testended!=0:
             print("CORRECT!")
             print("\n")
             break
-        elif(fflimit==0 and enteredans1=="5050"):
+        elif(fflimit==0 and enteredans2=="5050"):
             print("You Have 0 Life Lines Left.")
         elif (fflimit!=0 and enteredans2=="5050"):
             fflimit=fflimit-1
@@ -126,18 +115,18 @@ if testended!=0:
                     break
                 elif(enteredans25050=="C"):
                     testended=0
-                    print(result())
+                    print(result(str(name)))
                     break
                 else:
-                    print("\nPlease Enter a Valid Input.")
+                    print("\nInvalid Input")
                     
             break
         elif(enteredans2=="B" or enteredans2=="C" or enteredans2=="D"):
             testended=0
-            print(result())
+            print(result(str(name)))
             break
         else:
-            print("\nPlease Enter a Valid Input.")
+            print("\nInvalid Input")
 
 #3
 if testended!=0:
@@ -155,7 +144,7 @@ if testended!=0:
             print("CORRECT!")
             print("\n")
             break
-        elif(fflimit==0 and enteredans1=="5050"):
+        elif(fflimit==0 and enteredans3=="5050"):
             print("You Have 0 Life Lines Left.")
         elif (fflimit!=0 and enteredans3=="5050"):
             fflimit=fflimit-1
@@ -171,18 +160,18 @@ if testended!=0:
                     break
                 elif(enteredans35050=="A"):
                     testended=0
-                    print(result())
+                    print(result(str(name)))
                     break
                 else:
-                    print("\nPlease Enter a Valid Input.")
+                    print("\nInvalid Input")
                     
             break
         elif(enteredans3=="A" or enteredans3=="C" or enteredans3=="D"):
             testended=0
-            print(result())
+            print(result(str(name)))
             break
         else:
-            print("\nPlease Enter a Valid Input.")
+            print("\nInvalid Input")
     
 
 #4
@@ -201,7 +190,7 @@ if testended!=0:
             print("CORRECT!")
             print("\n")
             break
-        elif(fflimit==0 and enteredans1=="5050"):
+        elif(fflimit==0 and enteredans4=="5050"):
             print("You Have 0 Life Lines Left.")
         elif (fflimit!=0 and enteredans4=="5050"):
             fflimit=fflimit-1
@@ -217,18 +206,18 @@ if testended!=0:
                     break
                 elif(enteredans45050=="C"):
                     testended=0
-                    print(result())
+                    print(result(str(name)))
                     break
                 else:
-                    print("\nPlease Enter a Valid Input.")
+                    print("\nInvalid Input")
                     
             break
         elif(enteredans4=="A" or enteredans4=="C" or enteredans4=="D"):
             testended=0
-            print(result())
+            print(result(str(name)))
             break
         else:
-            print("\nPlease Enter a Valid Input.")
+            print("\nInvalid Input")
     
 #5
 if testended!=0:
@@ -246,7 +235,7 @@ if testended!=0:
             print("CORRECT!")
             print("\n")
             break
-        elif(fflimit==0 and enteredans1=="5050"):
+        elif(fflimit==0 and enteredans5=="5050"):
             print("You Have 0 Life Lines Left.")
         elif (fflimit!=0 and enteredans5=="5050"):
             fflimit=fflimit-1
@@ -262,18 +251,18 @@ if testended!=0:
                     break
                 elif(enteredans55050=="D"):
                     testended=0
-                    print(result())
+                    print(result(str(name)))
                     break
                 else:
-                    print("\nPlease Enter a Valid Input.")
+                    print("\nInvalid Input")
                     
             break
         elif(enteredans5=="A" or enteredans5=="B" or enteredans5=="D"):
             testended=0
-            print(result())
+            print(result(str(name)))
             break
         else:
-            print("\nPlease Enter a Valid Input.")
+            print("\nInvalid Input")
     
 #6
 if testended!=0:
@@ -286,39 +275,39 @@ if testended!=0:
             rawans6=input("Enter A/B/C/D: ")
         enteredans6=rawans6.capitalize()
 
-        if(enteredans6=="B"):
+        if(enteredans6=="A"):
             qreached=qreached+1
             print("CORRECT!")
             print("\n")
             break
-        elif(fflimit==0 and enteredans1=="5050"):
+        elif(fflimit==0 and enteredans6=="5050"):
             print("You Have 0 Life Lines Left.")
         elif (fflimit!=0 and enteredans6=="5050"):
             fflimit=fflimit-1
-            print("\n",fflimit," Life Lines Left...\n");print(data[27]);print(data[29]);print("\n")
+            print("\n",fflimit," Life Lines Left...\n");print(data[26]);print(data[29]);print("\n")
             while True:
-                rawans65050=input("Enter B/D: ")
+                rawans65050=input("Enter A/D: ")
                 enteredans65050=rawans65050.capitalize()
                 
-                if(enteredans65050=="B"):
+                if(enteredans65050=="A"):
                     qreached=qreached+1
                     print("CORRECT!")
                     print("\n")
                     break
                 elif(enteredans65050=="D"):
                     testended=0
-                    print(result())
+                    print(result(str(name)))
                     break
                 else:
-                    print("\nPlease Enter a Valid Input.")
+                    print("\nInvalid Input")
                     
             break
         elif(enteredans6=="A" or enteredans6=="C" or enteredans6=="D"):
             testended=0
-            print(result())
+            print(result(str(name)))
             break
         else:
-            print("\nPlease Enter a Valid Input.")
+            print("\nInvalid Input")
     
 #7
 if testended!=0:
@@ -336,7 +325,7 @@ if testended!=0:
             print("CORRECT!")
             print("\n")
             break
-        elif(fflimit==0 and enteredans1=="5050"):
+        elif(fflimit==0 and enteredans7=="5050"):
             print("You Have 0 Life Lines Left.")
         elif (fflimit!=0 and enteredans7=="5050"):
             fflimit=fflimit-1
@@ -352,18 +341,18 @@ if testended!=0:
                     break
                 elif(enteredans75050=="A"):
                     testended=0
-                    print(result())
+                    print(result(str(name)))
                     break
                 else:
-                    print("\nPlease Enter a Valid Input.")
+                    print("\nInvalid Input")
                     
             break
         elif(enteredans7=="A" or enteredans7=="C" or enteredans7=="D"):
             testended=0
-            print(result())
+            print(result(str(name)))
             break
         else:
-            print("\nPlease Enter a Valid Input.")
+            print("\nInvalid Input")
     
 #8
 if testended!=0:
@@ -381,7 +370,7 @@ if testended!=0:
             print("CORRECT!")
             print("\n")
             break
-        elif(fflimit==0 and enteredans1=="5050"):
+        elif(fflimit==0 and enteredans8=="5050"):
             print("You Have 0 Life Lines Left.")
         elif (fflimit!=0 and enteredans8=="5050"):
             fflimit=fflimit-1
@@ -397,18 +386,18 @@ if testended!=0:
                     break
                 elif(enteredans85050=="C"):
                     testended=0
-                    print(result())
+                    print(result(str(name)))
                     break
                 else:
-                    print("\nPlease Enter a Valid Input.")
+                    print("\nInvalid Input")
                     
             break
         elif(enteredans8=="A" or enteredans8=="C" or enteredans8=="D"):
             testended=0
-            print(result())
+            print(result(str(name)))
             break
         else:
-            print("\nPlease Enter a Valid Input.")
+            print("\nInvalid Input")
     
 #9
 if testended!=0:
@@ -426,7 +415,7 @@ if testended!=0:
             print("CORRECT!")
             print("\n")
             break
-        elif(fflimit==0 and enteredans1=="5050"):
+        elif(fflimit==0 and enteredans9=="5050"):
             print("You Have 0 Life Lines Left.")
         elif (fflimit!=0 and enteredans9=="5050"):
             fflimit=fflimit-1
@@ -442,18 +431,18 @@ if testended!=0:
                     break
                 elif(enteredans95050=="D"):
                     testended=0
-                    print(result())
+                    print(result(str(name)))
                     break
                 else:
-                    print("\nPlease Enter a Valid Input.")
+                    print("\nInvalid Input")
                     
             break
         elif(enteredans9=="B" or enteredans9=="C" or enteredans9=="D"):
             testended=0
-            print(result())
+            print(result(str(name)))
             break
         else:
-            print("\nPlease Enter a Valid Input.")
+            print("\nInvalid Input")
     
 #10
 if testended!=0:
@@ -470,8 +459,9 @@ if testended!=0:
             qreached=qreached+1
             print("CORRECT!")
             print("\n")
+            print(result(str(name)))
             break
-        elif(fflimit==0 and enteredans1=="5050"):
+        elif(fflimit==0 and enteredans10=="5050"):
             print("You Have 0 Life Lines Left.")
         elif (fflimit!=0 and enteredans10=="5050"):
             fflimit=fflimit-1
@@ -484,19 +474,19 @@ if testended!=0:
                     qreached=qreached+1
                     print("CORRECT!")
                     print("\n")
-                    print(result())
+                    print(result(str(name)))
                     break
                 elif(enteredans105050=="D"):
                     testended=0
-                    print(result())
+                    print(result(str(name)))
                     break
                 else:
-                    print("\nPlease Enter a Valid Input.")
+                    print("\nInvalid Input")
                     
             break
         elif(enteredans10=="A" or enteredans10=="C" or enteredans10=="D"):
             testended=0
-            print(result())
+            print(result(str(name)))
             break
         else:
-            print("\nPlease Enter a Valid Input.")
+            print("\nInvalid Input")
