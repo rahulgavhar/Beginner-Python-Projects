@@ -8,25 +8,25 @@ testended=1
 #RESULTS
 def result(name):
     if qreached == 0:
-            return "\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"100"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
+            return "\n" + "Wrong Answer." "\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"100"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 1:
-            return "\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"99"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
+            return "\n" + "Wrong Answer." "\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"99"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 2:
-            return "\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"92"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
+            return "\n" + "Wrong Answer." "\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"92"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 3:
-            return "\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"86"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
+            return "\n" + "Wrong Answer." "\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"86"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 4:
-            return "\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"72"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
+            return "\n" + "Wrong Answer." "\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"72"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 5:
-            return "\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"66"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
+            return "\n" + "Wrong Answer." "\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"66"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 6:
-            return "\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"47"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
+            return "\n" + "Wrong Answer." "\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"47"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 7:
-            return "\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"31"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
+            return "\n" + "Wrong Answer." "\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"31"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 8:
-            return "\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"20"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
+            return "\n" + "Wrong Answer." "\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"20"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 9:
-            return "\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"8"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
+            return "\n" + "Wrong Answer." "\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"8"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 10:
             return "\n" + "Congratulations "+name+" !!"+"\nYour probability of Failing in UPSC is "+"0"+"%\nKEEP IT UP!"
 print("\n")
