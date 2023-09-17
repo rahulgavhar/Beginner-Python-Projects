@@ -8,27 +8,27 @@ testended=1
 #RESULTS
 def result(name):
     if qreached == 0:
-            return "\n" + "Wrong Answer." + "\n\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"100"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
+            return "\n" + "Wrong Answer." + "\n\n" +name+"\U0001F614\n"+"Your probability of Failing in UPSE is "+"100"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 1:
-            return "\n" + "Wrong Answer." + "\n\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"99"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
+            return "\n" + "Wrong Answer." + "\n\n" +name+"\U0001F614\n"+"Your probability of Failing in UPSE is "+"99"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 2:
-            return "\n" + "Wrong Answer." + "\n\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"92"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
+            return "\n" + "Wrong Answer." + "\n\n" +name+"\U0001F614\n"+"Your probability of Failing in UPSE is "+"92"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 3:
-            return "\n" + "Wrong Answer." + "\n\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"86"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
+            return "\n" + "Wrong Answer." + "\n\n" +name+"\U0001F614\n"+"Your probability of Failing in UPSE is "+"86"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 4:
-            return "\n" + "Wrong Answer." + "\n\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"72"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
+            return "\n" + "Wrong Answer." + "\n\n" +name+"\U0001F614\n"+"Your probability of Failing in UPSE is "+"72"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 5:
-            return "\n" + "Wrong Answer." + "\n\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"66"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
+            return "\n" + "Wrong Answer." + "\n\n" +name+"\U0001F614\n"+"Your probability of Failing in UPSE is "+"59"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 6:
-            return "\n" + "Wrong Answer." + "\n\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"47"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
+            return "\n" + "Wrong Answer." + "\n\n" +name+"\U0001F614\n"+"Your probability of Failing in UPSE is "+"45"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 7:
-            return "\n" + "Wrong Answer." + "\n\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"31"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
+            return "\n" + "Wrong Answer." + "\n\n" +name+"\U0001F614\n"+"Your probability of Failing in UPSE is "+"31"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 8:
-            return "\n" + "Wrong Answer." + "\n\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"20"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
+            return "\n" + "Wrong Answer." + "\n\n" +name+"\U0001F614\n"+"Your probability of Failing in UPSE is "+"20"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 9:
-            return "\n" + "Wrong Answer." + "\n\n" + "Congratulations "+name+" !!"+"\n"+"Your probability of Failing in UPSE is "+"8"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
+            return "\n" + "Wrong Answer." + "\n\n" +name+"\U0001F614\n"+"Your probability of Failing in UPSE is "+"8"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 10:
-            return "\n" + "Congratulations "+name+" !!"+"\nYour probability of Failing in UPSC is "+"0"+"%\nKEEP IT UP!"
+            return "\n" + "Congratulations "+name+" \U0001F389\U0001F389"+"\nYou will easily pass UPSC. "+"\nKEEP IT UP!\U0001F44D"
 print("\n")
 
 data=("Q1. Among whom of the following does the Indian Constitution permit to take part in the proceedings of Parliament?","A. Solicitor General","B. Attorney General", "C. Cabinet Secretary","D. Cheif Justice","Q2. Who, in 1978, became the first person to be born in the continent of Antarctica?","A. Emilio Palma","B. James Weddell","C. Amilio Gander", "D. Charles Wilkes","Q3. Which colonial power ended its involvement in India by selling the rights of the Nicobar islands to the British on October 18, 1868?","A. Belgium","B. Denmark","C. Italy","D. France","Q4. Who is the first women to successfully climb K2, the world's second highest mountain peak?","A. Junko Tabei","B. Wanda Rutkiewicz","C. Tamae Wantanabe","D. Cantal Mauduit","Q5. Which poet in the court of Mughal Ruler Bahadur Shah Zafar wrote the \'Dastan-e-Ghadar\', a personal account of the 1857 revolt?","A. Mir Taqi Mir","B. Mohammad Ibrahim Zauq","C. Zahir Dehlvi","D. Abdul- Qasim Ferdowsi","Q6. The Historic Indo-Pak talks of 1972 between Indira Gandhi and Zulfikar Ali Bhutto were at which place in Shimla?","A. Viceregal Lodge","B. Gorton Castle","C. Barnes Court","D. Cecil Hotel","Q7. Where in SIngapore did Netaji Subhash Chandara Bose make the first proclamation of an Ajad Hind government?","A. Cathay Cinema Hall","B. Fort Canning PArk","C. National University of Singapore","D. National Gallery of Singapore","Q8. Milinda-Panha is a dialogue between King Menander or Milinda and which buddhist monk?","A. Asanga","B. Nagasena","C. Mahadharmarakshita","D. Dharmarakshita","Q9. Which was the first mountain peak above 8,000 meters in height to be submitted by Human?","A. Annapurna","B. Lhotse","C. Kanchenjunga","D. Makalu","Last Question!! What is the title of the Thesis that Dr. B R Ambedkar submitted to the LOndon School of Economics for which he was awarded his doctorate in 1923?","A. The wants and means of India","B. The problem of the Rupee","C. National Dividend of India","D. The Law and Lawyers")
