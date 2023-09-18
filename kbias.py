@@ -8,25 +8,25 @@ testended=1
 #RESULTS
 def result(name):
     if qreached == 0:
-            return "\n" + "Wrong Answer." + "\n\n" +name+"\U0001F614\n"+"Your probability of Failing in UPSE is "+"100"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
+            return "\n" + "Incorrect Answer." + f"\nCorrect Answer is {data[2]}" + "\n\n" +name+"\U0001F614\n"+"Your probability of Failing in UPSE is "+"100"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 1:
-            return "\n" + "Wrong Answer." + "\n\n" +name+"\U0001F614\n"+"Your probability of Failing in UPSE is "+"99"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
+            return "\n" + "Incorrect Answer." + f"\nCorrect Answer is {data[6]} " + "\n\n" +name+"\U0001F614\n"+"Your probability of Failing in UPSE is "+"99"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 2:
-            return "\n" + "Wrong Answer." + "\n\n" +name+"\U0001F614\n"+"Your probability of Failing in UPSE is "+"92"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
+            return "\n" + "Incorrect Answer." + f"\nCorrect Answer is {data[12]} " + "\n\n" +name+"\U0001F614\n"+"Your probability of Failing in UPSE is "+"92"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 3:
-            return "\n" + "Wrong Answer." + "\n\n" +name+"\U0001F614\n"+"Your probability of Failing in UPSE is "+"86"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
+            return "\n" + "Incorrect Answer." + f"\nCorrect Answer is {data[17]} " + "\n\n" +name+"\U0001F614\n"+"Your probability of Failing in UPSE is "+"86"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 4:
-            return "\n" + "Wrong Answer." + "\n\n" +name+"\U0001F614\n"+"Your probability of Failing in UPSE is "+"72"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
+            return "\n" + "Incorrect Answer." + f"\nCorrect Answer is {data[23]} " + "\n\n" +name+"\U0001F614\n"+"Your probability of Failing in UPSE is "+"72"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 5:
-            return "\n" + "Wrong Answer." + "\n\n" +name+"\U0001F614\n"+"Your probability of Failing in UPSE is "+"59"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
+            return "\n" + "Incorrect Answer." + f"\nCorrect Answer is {data[26]} " + "\n\n" +name+"\U0001F614\n"+"Your probability of Failing in UPSE is "+"59"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 6:
-            return "\n" + "Wrong Answer." + "\n\n" +name+"\U0001F614\n"+"Your probability of Failing in UPSE is "+"45"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
+            return "\n" + "Incorrect Answer." + f"\nCorrect Answer is {data[32]} " + "\n\n" +name+"\U0001F614\n"+"Your probability of Failing in UPSE is "+"45"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 7:
-            return "\n" + "Wrong Answer." + "\n\n" +name+"\U0001F614\n"+"Your probability of Failing in UPSE is "+"31"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
+            return "\n" + "Incorrect Answer." + f"\nCorrect Answer is {data[37]} " + "\n\n" +name+"\U0001F614\n"+"Your probability of Failing in UPSE is "+"31"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 8:
-            return "\n" + "Wrong Answer." + "\n\n" +name+"\U0001F614\n"+"Your probability of Failing in UPSE is "+"20"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
+            return "\n" + "Incorrect Answer." + f"\nCorrect Answer is {data[41]} " + "\n\n" +name+"\U0001F614\n"+"Your probability of Failing in UPSE is "+"20"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 9:
-            return "\n" + "Wrong Answer." + "\n\n" +name+"\U0001F614\n"+"Your probability of Failing in UPSE is "+"8"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
+            return "\n" + "Incorrect Answer." + f"\nCorrect Answer is {data[47]} " + "\n\n" +name+"\U0001F614\n"+"Your probability of Failing in UPSE is "+"8"+"%\nJara Padhai Likhai Karo. IAYAS Bano."
     elif qreached == 10:
             return "\n" + "Congratulations "+name+" \U0001F389\U0001F389"+"\nYou will easily pass UPSC. "+"\nKEEP IT UP!\U0001F44D"
 print("\n")
