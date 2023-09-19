@@ -1,5 +1,6 @@
 #5:30 wake up
 #23:30 sleep
+# Make sure the python interpreter runs in your time zone.
 import time
 tth=int(time.strftime('%H'))
 ttm=int(time.strftime('%M'))
