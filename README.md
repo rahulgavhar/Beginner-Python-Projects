@@ -1,3 +1,2 @@
-# KBIAS
-My First Python Project
-Those who want to test their General Knowledge should try it!
+# These are Python Projects for Beginners
+You can Copy the Code and Use it for your Knowledge.
