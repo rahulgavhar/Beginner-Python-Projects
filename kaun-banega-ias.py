@@ -38,10 +38,30 @@ print("\n")
 input("(press ENTER key to begin)")
 print("\n")
 
+import time as t
+
 #1
 if testended!=0:
-    print(data[0]);print(data[1]);print(data[2]);print(data[3]);print(data[4])
-    print("\n")
+    for i in data[0]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[1]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[2]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[3]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[4]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
     while True:
         if fflimit!=0:
             rawans1=input("Enter A/B/C/D or 5050: ")
@@ -85,7 +105,26 @@ if testended!=0:
 
 #2
 if testended!=0:
-    print(data[5]);print(data[6]);print(data[7]);print(data[8]);print(data[9])
+    for i in data[5]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[6]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[7]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[8]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[9]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
     print("\n")
     while True:
         if fflimit!=0:
@@ -130,7 +169,26 @@ if testended!=0:
 
 #3
 if testended!=0:
-    print(data[10]);print(data[11]);print(data[12]);print(data[13]);print(data[14])
+    for i in data[10]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[11]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[12]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[13]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[14]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
     print("\n")
     while True:
         if fflimit!=0:
@@ -176,7 +234,26 @@ if testended!=0:
 
 #4
 if testended!=0:
-    print(data[15]);print(data[16]);print(data[17]);print(data[18]);print(data[19])
+    for i in data[15]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[16]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[17]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[18]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[19]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
     print("\n")
     while True:
         if fflimit!=0:
@@ -221,7 +298,26 @@ if testended!=0:
     
 #5
 if testended!=0:
-    print(data[20]);print(data[21]);print(data[22]);print(data[23]);print(data[24])
+    for i in data[20]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[21]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[22]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[23]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[24]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
     print("\n")
     while True:
         if fflimit!=0:
@@ -266,7 +362,26 @@ if testended!=0:
     
 #6
 if testended!=0:
-    print(data[25]);print(data[26]);print(data[27]);print(data[28]);print(data[29])
+    for i in data[25]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[26]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[27]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[28]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[29]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
     print("\n")
     while True:
         if fflimit!=0:
@@ -311,7 +426,26 @@ if testended!=0:
     
 #7
 if testended!=0:
-    print(data[30]);print(data[31]);print(data[32]);print(data[33]);print(data[34])
+    for i in data[30]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[31]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[32]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[33]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[34]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
     print("\n")
     while True:
         if fflimit!=0:
@@ -356,7 +490,26 @@ if testended!=0:
     
 #8
 if testended!=0:
-    print(data[35]);print(data[36]);print(data[37]);print(data[38]);print(data[39])
+    for i in data[35]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[36]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[37]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[38]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[39]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
     print("\n")
     while True:
         if fflimit!=0:
@@ -401,7 +554,26 @@ if testended!=0:
     
 #9
 if testended!=0:
-    print(data[40]);print(data[41]);print(data[42]);print(data[43]);print(data[44])
+    for i in data[40]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[41]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[42]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[43]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[44]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
     print("\n")
     while True:
         if fflimit!=0:
@@ -446,7 +618,26 @@ if testended!=0:
     
 #10
 if testended!=0:
-    print(data[45]);print(data[46]);print(data[47]);print(data[48]);print(data[49])
+    for i in data[45]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[46]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[47]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[48]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
+    for i in data[49]:
+        print(i,end="")
+        t.sleep(0.05)
+    print("",end="\n")
     print("\n")
     while True:
         if fflimit!=0:
