@@ -2,7 +2,7 @@
 #5:30 wake up
 #23:30 sleep
 
-# Make sure the python interpreter runs in your time zone.
+print("Make sure the python interpreter runs in your Time Zone.\n\n")
 import time
 tth=int(time.strftime('%H'))
 ttm=int(time.strftime('%M'))
