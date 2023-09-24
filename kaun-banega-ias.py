@@ -31,7 +31,7 @@ def result(name):
             return "\n" + "Congratulations "+name+" \U0001F389\U0001F389"+"\nYou will easily pass UPSC. "+"\nKEEP IT UP!\U0001F44D"
 print("\n")
 
-data=("Q1. Among whom of the following does the Indian Constitution permit to take part in the proceedings of Parliament?","A. Solicitor General","B. Attorney General", "C. Cabinet Secretary","D. Cheif Justice","Q2. Who, in 1978, became the first person to be born in the continent of Antarctica?","A. Emilio Palma","B. James Weddell","C. Amilio Gander", "D. Charles Wilkes","Q3. Which colonial power ended its involvement in India by selling the rights of the Nicobar islands to the British on October 18, 1868?","A. Belgium","B. Denmark","C. Italy","D. France","Q4. Who is the first women to successfully climb K2, the world's second highest mountain peak?","A. Junko Tabei","B. Wanda Rutkiewicz","C. Tamae Wantanabe","D. Cantal Mauduit","Q5. Which poet in the court of Mughal Ruler Bahadur Shah Zafar wrote the \'Dastan-e-Ghadar\', a personal account of the 1857 revolt?","A. Mir Taqi Mir","B. Mohammad Ibrahim Zauq","C. Zahir Dehlvi","D. Abdul- Qasim Ferdowsi","Q6. The Historic Indo-Pak talks of 1972 between Indira Gandhi and Zulfikar Ali Bhutto were at which place in Shimla?","A. Viceregal Lodge","B. Gorton Castle","C. Barnes Court","D. Cecil Hotel","Q7. Where in SIngapore did Netaji Subhash Chandara Bose make the first proclamation of an Ajad Hind government?","A. Cathay Cinema Hall","B. Fort Canning PArk","C. National University of Singapore","D. National Gallery of Singapore","Q8. Milinda-Panha is a dialogue between King Menander or Milinda and which buddhist monk?","A. Asanga","B. Nagasena","C. Mahadharmarakshita","D. Dharmarakshita","Q9. Which was the first mountain peak above 8,000 meters in height to be submitted by Human?","A. Annapurna","B. Lhotse","C. Kanchenjunga","D. Makalu","Last Question!! What is the title of the Thesis that Dr. B R Ambedkar submitted to the LOndon School of Economics for which he was awarded his doctorate in 1923?","A. The wants and means of India","B. The problem of the Rupee","C. National Dividend of India","D. The Law and Lawyers")
+data=("Q1. Among whom of the following does the Indian Constitution permit to take part in the proceedings of Parliament?","A. Solicitor General","B. Attorney General", "C. Cabinet Secretary","D. Cheif Justice","Q2. Who, in 1978, became the first person to be born in the continent of Antarctica?","A. Emilio Palma","B. James Weddell","C. Amilio Gander", "D. Charles Wilkes","Q3. Which colonial power ended its involvement in India by selling the rights of the Nicobar islands to the British on October 18, 1868?","A. Belgium","B. Denmark","C. Italy","D. France","Q4. Who is the first women to successfully climb K2, the world's second highest mountain peak?","A. Junko Tabei","B. Wanda Rutkiewicz","C. Tamae Wantanabe","D. Cantal Mauduit","Q5. Which poet in the court of Mughal Ruler Bahadur Shah Zafar wrote the \'Dastan-e-Ghadar\', a personal account of the 1857 revolt?","A. Mir Taqi Mir","B. Mohammad Ibrahim Zauq","C. Zahir Dehlvi","D. Abdul- Qasim Ferdowsi","Q6. The Historic Indo-Pak talks of 1972 between Indira Gandhi and Zulfikar Ali Bhutto were at which place in Shimla?","A. Viceregal Lodge","B. Gorton Castle","C. Barnes Court","D. Cecil Hotel","Q7. Where in Singapore did Netaji Subhash Chandara Bose make the first proclamation of an Ajad Hind government?","A. Cathay Cinema Hall","B. Fort Canning PArk","C. National University of Singapore","D. National Gallery of Singapore","Q8. Milinda-Panha is a dialogue between King Menander or Milinda and which buddhist monk?","A. Asanga","B. Nagasena","C. Mahadharmarakshita","D. Dharmarakshita","Q9. Which was the first mountain peak above 8,000 meters in height to be submitted by Human?","A. Annapurna","B. Lhotse","C. Kanchenjunga","D. Makalu","Last Question!! \nWhat is the title of the Thesis that Dr. B R Ambedkar submitted to the London School of Economics for which he was awarded his doctorate in 1923?","A. The wants and means of India","B. The problem of the Rupee","C. National Dividend of India","D. The Law and Lawyers")
 
 print("*Important Instructions*\nType in the Option A,B,C,D whichever you think is Correct.\nYou have only Three 50-50 Life Lines (One Life Line per Question.)\nEnter \"5050\" to use it.\nYou lose, if you enter the Wrong Option.")
 print("\n")
@@ -39,6 +39,22 @@ input("(press ENTER key to begin)")
 print("\n")
 
 import time as t
+
+def invinp():
+    message="**Invalid Input**"
+    count=0
+    while count<6:
+        print(f"{message}",end="\r")
+        if count==1:
+                message="**Invalid Input**"
+        elif count==3:
+                message="**Invalid Input**"
+        elif count==5:
+                message="**Invalid Input**"
+        else:
+            message="                     "
+        count+=1
+        t.sleep(0.8)
 
 #1
 if testended!=0:
@@ -78,7 +94,15 @@ if testended!=0:
             print("You Have 0 Life Lines Left.")
         elif(fflimit!=0 and enteredans1=="5050"):
             fflimit=fflimit-1
-            print("\n",fflimit," Life Lines Left...\n");print(data[2]);print(data[4]);print("\n")
+            print("\n",fflimit," Life Lines Left...\n")
+            for i in data[2]:
+                print(i,end="")
+                t.sleep(0.05)
+            for i in data[4]:
+                print(i,end="")
+                t.sleep(0.05)
+            
+            print("\n")
             while True:
                 rawans15050=input("Enter B/D: ")
                 enteredans15050=rawans15050.capitalize()
@@ -93,7 +117,7 @@ if testended!=0:
                     print(result(str(name)))
                     break
                 else:
-                    print("\nInvalid Input")
+                    print("\n",invinp())
                     
             break
         elif(enteredans1=="A" or enteredans1=="C" or enteredans1=="D"):
@@ -101,7 +125,7 @@ if testended!=0:
             print(result(str(name)))
             break
         else:
-            print("\nInvalid Input")
+            print("\n",invinp())
 
 #2
 if testended!=0:
@@ -142,7 +166,15 @@ if testended!=0:
             print("You Have 0 Life Lines Left.")
         elif (fflimit!=0 and enteredans2=="5050"):
             fflimit=fflimit-1
-            print("\n",fflimit," Life Lines Left...\n");print(data[6]);print(data[8]);print("\n")
+            print("\n",fflimit," Life Lines Left...\n")
+            for i in data[6]:
+                print(i,end="")
+                t.sleep(0.05)
+            for i in data[8]:
+                print(i,end="")
+                t.sleep(0.05)
+            
+            print("\n")
             while True:
                 rawans25050=input("Enter A/C: ")
                 enteredans25050=rawans25050.capitalize()
@@ -157,7 +189,7 @@ if testended!=0:
                     print(result(str(name)))
                     break
                 else:
-                    print("\nInvalid Input")
+                    print("\n",invinp())
                     
             break
         elif(enteredans2=="B" or enteredans2=="C" or enteredans2=="D"):
@@ -165,7 +197,7 @@ if testended!=0:
             print(result(str(name)))
             break
         else:
-            print("\nInvalid Input")
+            print("\n",invinp())
 
 #3
 if testended!=0:
@@ -206,7 +238,15 @@ if testended!=0:
             print("You Have 0 Life Lines Left.")
         elif (fflimit!=0 and enteredans3=="5050"):
             fflimit=fflimit-1
-            print("\n",fflimit," Life Lines Left...\n");print(data[11]);print(data[12]);print("\n")
+            print("\n",fflimit," Life Lines Left...\n")
+            for i in data[11]:
+                print(i,end="")
+                t.sleep(0.05)
+            for i in data[12]:
+                print(i,end="")
+                t.sleep(0.05)
+            
+            print("\n")
             while True:
                 rawans35050=input("Enter A/B: ")
                 enteredans35050=rawans35050.capitalize()
@@ -221,7 +261,7 @@ if testended!=0:
                     print(result(str(name)))
                     break
                 else:
-                    print("\nInvalid Input")
+                    print("\n",invinp())
                     
             break
         elif(enteredans3=="A" or enteredans3=="C" or enteredans3=="D"):
@@ -229,7 +269,7 @@ if testended!=0:
             print(result(str(name)))
             break
         else:
-            print("\nInvalid Input")
+            print("\n",invinp())
     
 
 #4
@@ -271,7 +311,15 @@ if testended!=0:
             print("You Have 0 Life Lines Left.")
         elif (fflimit!=0 and enteredans4=="5050"):
             fflimit=fflimit-1
-            print("\n",fflimit," Life Lines Left...\n");print(data[17]);print(data[18]);print("\n")
+            print("\n",fflimit," Life Lines Left...\n")
+            for i in data[17]:
+                print(i,end="")
+                t.sleep(0.05)
+            for i in data[18]:
+                print(i,end="")
+                t.sleep(0.05)
+            
+            print("\n")
             while True:
                 rawans45050=input("Enter B/C: ")
                 enteredans45050=rawans45050.capitalize()
@@ -286,7 +334,7 @@ if testended!=0:
                     print(result(str(name)))
                     break
                 else:
-                    print("\nInvalid Input")
+                    print("\n",invinp())
                     
             break
         elif(enteredans4=="A" or enteredans4=="C" or enteredans4=="D"):
@@ -294,7 +342,7 @@ if testended!=0:
             print(result(str(name)))
             break
         else:
-            print("\nInvalid Input")
+            print("\n",invinp())
     
 #5
 if testended!=0:
@@ -335,7 +383,15 @@ if testended!=0:
             print("You Have 0 Life Lines Left.")
         elif (fflimit!=0 and enteredans5=="5050"):
             fflimit=fflimit-1
-            print("\n",fflimit," Life Lines Left...\n");print(data[23]);print(data[24]);print("\n")
+            print("\n",fflimit," Life Lines Left...\n")
+            for i in data[23]:
+                print(i,end="")
+                t.sleep(0.05)
+            for i in data[24]:
+                print(i,end="")
+                t.sleep(0.05)
+            
+            print("\n")
             while True:
                 rawans55050=input("Enter C/D: ")
                 enteredans55050=rawans55050.capitalize()
@@ -350,7 +406,7 @@ if testended!=0:
                     print(result(str(name)))
                     break
                 else:
-                    print("\nInvalid Input")
+                    print("\n",invinp())
                     
             break
         elif(enteredans5=="A" or enteredans5=="B" or enteredans5=="D"):
@@ -358,7 +414,7 @@ if testended!=0:
             print(result(str(name)))
             break
         else:
-            print("\nInvalid Input")
+            print("\n",invinp())
     
 #6
 if testended!=0:
@@ -399,7 +455,15 @@ if testended!=0:
             print("You Have 0 Life Lines Left.")
         elif (fflimit!=0 and enteredans6=="5050"):
             fflimit=fflimit-1
-            print("\n",fflimit," Life Lines Left...\n");print(data[26]);print(data[29]);print("\n")
+            print("\n",fflimit," Life Lines Left...\n")
+            for i in data[26]:
+                print(i,end="")
+                t.sleep(0.05)
+            for i in data[29]:
+                print(i,end="")
+                t.sleep(0.05)
+            
+            print("\n")
             while True:
                 rawans65050=input("Enter A/D: ")
                 enteredans65050=rawans65050.capitalize()
@@ -414,7 +478,7 @@ if testended!=0:
                     print(result(str(name)))
                     break
                 else:
-                    print("\nInvalid Input")
+                    print("\n",invinp())
                     
             break
         elif(enteredans6=="A" or enteredans6=="C" or enteredans6=="D"):
@@ -422,7 +486,7 @@ if testended!=0:
             print(result(str(name)))
             break
         else:
-            print("\nInvalid Input")
+            print("\n",invinp())
     
 #7
 if testended!=0:
@@ -463,7 +527,15 @@ if testended!=0:
             print("You Have 0 Life Lines Left.")
         elif (fflimit!=0 and enteredans7=="5050"):
             fflimit=fflimit-1
-            print("\n",fflimit," Life Lines Left...\n");print(data[31]);print(data[32]);print("\n")
+            print("\n",fflimit," Life Lines Left...\n")
+            for i in data[31]:
+                print(i,end="")
+                t.sleep(0.05)
+            for i in data[32]:
+                print(i,end="")
+                t.sleep(0.05)
+            
+            print("\n")
             while True:
                 rawans75050=input("Enter A/B: ")
                 enteredans75050=rawans75050.capitalize()
@@ -478,7 +550,7 @@ if testended!=0:
                     print(result(str(name)))
                     break
                 else:
-                    print("\nInvalid Input")
+                    print("\n",invinp())
                     
             break
         elif(enteredans7=="A" or enteredans7=="C" or enteredans7=="D"):
@@ -486,7 +558,7 @@ if testended!=0:
             print(result(str(name)))
             break
         else:
-            print("\nInvalid Input")
+            print("\n",invinp())
     
 #8
 if testended!=0:
@@ -527,7 +599,15 @@ if testended!=0:
             print("You Have 0 Life Lines Left.")
         elif (fflimit!=0 and enteredans8=="5050"):
             fflimit=fflimit-1
-            print("\n",fflimit," Life Lines Left...\n");print(data[37]);print(data[38]);print("\n")
+            print("\n",fflimit," Life Lines Left...\n")
+            for i in data[37]:
+                print(i,end="")
+                t.sleep(0.05)
+            for i in data[38]:
+                print(i,end="")
+                t.sleep(0.05)
+            
+            print("\n")
             while True:
                 rawans85050=input("Enter B/C: ")
                 enteredans85050=rawans85050.capitalize()
@@ -542,7 +622,7 @@ if testended!=0:
                     print(result(str(name)))
                     break
                 else:
-                    print("\nInvalid Input")
+                    print("\n",invinp())
                     
             break
         elif(enteredans8=="A" or enteredans8=="C" or enteredans8=="D"):
@@ -550,7 +630,7 @@ if testended!=0:
             print(result(str(name)))
             break
         else:
-            print("\nInvalid Input")
+            print("\n",invinp())
     
 #9
 if testended!=0:
@@ -591,9 +671,16 @@ if testended!=0:
             print("You Have 0 Life Lines Left.")
         elif (fflimit!=0 and enteredans9=="5050"):
             fflimit=fflimit-1
-            print("\n",fflimit," Life Lines Left...\n");print(data[41]);print(data[44]);print("\n")
+            print("\n",fflimit," Life Lines Left...\n")
+            for i in data[41]:
+                print(i,end="")
+                t.sleep(0.05)
+            for i in data[44]:
+                print(i,end="")
+                t.sleep(0.05)
+            print("\n")
             while True:
-                rawans95050=input("Enter B/D: ")
+                rawans95050=input("Enter A/D: ")
                 enteredans95050=rawans95050.capitalize()
                 
                 if(enteredans95050=="A"):
@@ -606,7 +693,7 @@ if testended!=0:
                     print(result(str(name)))
                     break
                 else:
-                    print("\nInvalid Input")
+                    print("\n",invinp())
                     
             break
         elif(enteredans9=="B" or enteredans9=="C" or enteredans9=="D"):
@@ -614,7 +701,7 @@ if testended!=0:
             print(result(str(name)))
             break
         else:
-            print("\nInvalid Input")
+            print("\n",invinp())
     
 #10
 if testended!=0:
@@ -656,7 +743,15 @@ if testended!=0:
             print("You Have 0 Life Lines Left.")
         elif (fflimit!=0 and enteredans10=="5050"):
             fflimit=fflimit-1
-            print("\n",fflimit," Life Lines Left...\n");print(data[47]);print(data[49]);print("\n")
+            print("\n",fflimit," Life Lines Left...\n")
+            for i in data[47]:
+                print(i,end="")
+                t.sleep(0.05)
+            for i in data[49]:
+                print(i,end="")
+                t.sleep(0.05)
+            
+            print("\n")
             while True:
                 rawans105050=input("Enter B/D: ")
                 enteredans105050=rawans105050.capitalize()
@@ -672,7 +767,7 @@ if testended!=0:
                     print(result(str(name)))
                     break
                 else:
-                    print("\nInvalid Input")
+                    print("\n",invinp())
                     
             break
         elif(enteredans10=="A" or enteredans10=="C" or enteredans10=="D"):
@@ -680,4 +775,4 @@ if testended!=0:
             print(result(str(name)))
             break
         else:
-            print("\nInvalid Input")
+            print("\n",invinp())
