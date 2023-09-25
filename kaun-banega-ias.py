@@ -117,7 +117,7 @@ if testended!=0:
                     print(result(str(name)))
                     break
                 else:
-                    print("\n",invinp())
+                    invinp()
                     
             break
         elif(enteredans1=="A" or enteredans1=="C" or enteredans1=="D"):
@@ -125,7 +125,7 @@ if testended!=0:
             print(result(str(name)))
             break
         else:
-            print("\n",invinp())
+            invinp()
 
 #2
 if testended!=0:
@@ -189,7 +189,7 @@ if testended!=0:
                     print(result(str(name)))
                     break
                 else:
-                    print("\n",invinp())
+                    invinp()
                     
             break
         elif(enteredans2=="B" or enteredans2=="C" or enteredans2=="D"):
@@ -197,7 +197,7 @@ if testended!=0:
             print(result(str(name)))
             break
         else:
-            print("\n",invinp())
+            invinp()
 
 #3
 if testended!=0:
@@ -261,7 +261,7 @@ if testended!=0:
                     print(result(str(name)))
                     break
                 else:
-                    print("\n",invinp())
+                    invinp()
                     
             break
         elif(enteredans3=="A" or enteredans3=="C" or enteredans3=="D"):
@@ -269,7 +269,7 @@ if testended!=0:
             print(result(str(name)))
             break
         else:
-            print("\n",invinp())
+            invinp()
     
 
 #4
@@ -334,7 +334,7 @@ if testended!=0:
                     print(result(str(name)))
                     break
                 else:
-                    print("\n",invinp())
+                    invinp()
                     
             break
         elif(enteredans4=="A" or enteredans4=="C" or enteredans4=="D"):
@@ -342,7 +342,7 @@ if testended!=0:
             print(result(str(name)))
             break
         else:
-            print("\n",invinp())
+            invinp()
     
 #5
 if testended!=0:
@@ -406,7 +406,7 @@ if testended!=0:
                     print(result(str(name)))
                     break
                 else:
-                    print("\n",invinp())
+                    invinp()
                     
             break
         elif(enteredans5=="A" or enteredans5=="B" or enteredans5=="D"):
@@ -414,7 +414,7 @@ if testended!=0:
             print(result(str(name)))
             break
         else:
-            print("\n",invinp())
+            invinp()
     
 #6
 if testended!=0:
@@ -478,7 +478,7 @@ if testended!=0:
                     print(result(str(name)))
                     break
                 else:
-                    print("\n",invinp())
+                    invinp()
                     
             break
         elif(enteredans6=="A" or enteredans6=="C" or enteredans6=="D"):
@@ -486,7 +486,7 @@ if testended!=0:
             print(result(str(name)))
             break
         else:
-            print("\n",invinp())
+            invinp()
     
 #7
 if testended!=0:
@@ -550,7 +550,7 @@ if testended!=0:
                     print(result(str(name)))
                     break
                 else:
-                    print("\n",invinp())
+                    invinp()
                     
             break
         elif(enteredans7=="A" or enteredans7=="C" or enteredans7=="D"):
@@ -558,7 +558,7 @@ if testended!=0:
             print(result(str(name)))
             break
         else:
-            print("\n",invinp())
+            invinp()
     
 #8
 if testended!=0:
@@ -622,7 +622,7 @@ if testended!=0:
                     print(result(str(name)))
                     break
                 else:
-                    print("\n",invinp())
+                    invinp()
                     
             break
         elif(enteredans8=="A" or enteredans8=="C" or enteredans8=="D"):
@@ -630,7 +630,7 @@ if testended!=0:
             print(result(str(name)))
             break
         else:
-            print("\n",invinp())
+            invinp()
     
 #9
 if testended!=0:
@@ -693,7 +693,7 @@ if testended!=0:
                     print(result(str(name)))
                     break
                 else:
-                    print("\n",invinp())
+                    invinp()
                     
             break
         elif(enteredans9=="B" or enteredans9=="C" or enteredans9=="D"):
@@ -701,7 +701,7 @@ if testended!=0:
             print(result(str(name)))
             break
         else:
-            print("\n",invinp())
+            invinp()
     
 #10
 if testended!=0:
@@ -767,7 +767,7 @@ if testended!=0:
                     print(result(str(name)))
                     break
                 else:
-                    print("\n",invinp())
+                    invinp()
                     
             break
         elif(enteredans10=="A" or enteredans10=="C" or enteredans10=="D"):
@@ -775,4 +775,4 @@ if testended!=0:
             print(result(str(name)))
             break
         else:
-            print("\n",invinp())
+            invinp()
