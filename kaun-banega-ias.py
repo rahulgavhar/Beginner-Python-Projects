@@ -77,7 +77,7 @@ if testended!=0:
     for i in data[4]:
         print(i,end="")
         t.sleep(0.05)
-    print("",end="\n")
+    print("\n")
     while True:
         if fflimit!=0:
             rawans1=input("Enter A/B/C/D or 5050: ")
