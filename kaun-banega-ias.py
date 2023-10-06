@@ -98,6 +98,7 @@ if testended!=0:
             for i in data[2]:
                 print(i,end="")
                 t.sleep(0.05)
+            print()
             for i in data[4]:
                 print(i,end="")
                 t.sleep(0.05)
@@ -170,6 +171,7 @@ if testended!=0:
             for i in data[6]:
                 print(i,end="")
                 t.sleep(0.05)
+            print()
             for i in data[8]:
                 print(i,end="")
                 t.sleep(0.05)
@@ -242,6 +244,7 @@ if testended!=0:
             for i in data[11]:
                 print(i,end="")
                 t.sleep(0.05)
+            print()
             for i in data[12]:
                 print(i,end="")
                 t.sleep(0.05)
@@ -315,6 +318,7 @@ if testended!=0:
             for i in data[17]:
                 print(i,end="")
                 t.sleep(0.05)
+            print()
             for i in data[18]:
                 print(i,end="")
                 t.sleep(0.05)
@@ -387,6 +391,7 @@ if testended!=0:
             for i in data[23]:
                 print(i,end="")
                 t.sleep(0.05)
+            print()
             for i in data[24]:
                 print(i,end="")
                 t.sleep(0.05)
@@ -459,6 +464,7 @@ if testended!=0:
             for i in data[26]:
                 print(i,end="")
                 t.sleep(0.05)
+            print()
             for i in data[29]:
                 print(i,end="")
                 t.sleep(0.05)
@@ -531,6 +537,7 @@ if testended!=0:
             for i in data[31]:
                 print(i,end="")
                 t.sleep(0.05)
+            print()
             for i in data[32]:
                 print(i,end="")
                 t.sleep(0.05)
@@ -603,6 +610,7 @@ if testended!=0:
             for i in data[37]:
                 print(i,end="")
                 t.sleep(0.05)
+            print()
             for i in data[38]:
                 print(i,end="")
                 t.sleep(0.05)
@@ -675,6 +683,7 @@ if testended!=0:
             for i in data[41]:
                 print(i,end="")
                 t.sleep(0.05)
+            print()
             for i in data[44]:
                 print(i,end="")
                 t.sleep(0.05)
@@ -747,6 +756,7 @@ if testended!=0:
             for i in data[47]:
                 print(i,end="")
                 t.sleep(0.05)
+            print()
             for i in data[49]:
                 print(i,end="")
                 t.sleep(0.05)
