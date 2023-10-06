@@ -56,3 +56,5 @@ for article in news["articles"]:
     print()
     print("Description:")
     print(article["description"])
+    print("More info:",end=" ")
+    print(article["url"])
