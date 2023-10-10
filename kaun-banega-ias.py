@@ -43,13 +43,11 @@ import time as t
 def invinp():
     message="**Invalid Input**"
     count=0
-    while count<6:
+    while count<4:
         print(f"{message}",end="\r")
         if count==1:
                 message="**Invalid Input**"
         elif count==3:
-                message="**Invalid Input**"
-        elif count==5:
                 message="**Invalid Input**"
         else:
             message="                     "
