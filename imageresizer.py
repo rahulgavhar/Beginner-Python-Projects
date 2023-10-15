@@ -1,5 +1,5 @@
 #Requirements: Python 3.6.5 or higher, OpenCV 4.5.1 or higher, import pillow module
-#Folders: Resize Image > Input, Output, Dustbin, imageresizer.py
+#Folders: Image Operation > Input, Output, Dustbin, imageresizer.py
 
 import cv2
 import os
@@ -23,9 +23,11 @@ except Exception as e:
     print("Error: ",e)
 
 if run=="yes":
+    print("Performing Image Operation on: ",filename)
+    print("Enter the operation for image\n1. Change File Size\n2. Change Dimensions\n")
     while True:
         try:
-            method=input("Enter the operation for image\n1. Change File Size\n2. Change Dimensions\nEnter 1 or 2: ")
+            method=input("\nEnter 1 or 2: ")
             if method=="1" or method=="2":
                 break
             else:
@@ -41,16 +43,15 @@ if run=="yes":
             qlt=int(input("Enter the new quality of the image (1-50)for compression, (50-100)for expansion: "))
             if qlt>=1 and qlt<=100:
                 break
-            elif qlt>50:
-                break
             else:
-                print("Preffered quality is between 1-100")
+                print("*Preffered quality is between 1-100*\n")
                 continue
         image = Image.open(f"Image Operation/Input/{filename}")
         image.save(f"Image Operation/Output/{filename.split('.')[0]}_reduced.jpg", optimize=True, quality=qlt)
         compressed_size = os.path.getsize(f"Image Operation/Output/{filename.split('.')[0]}_reduced.jpg")
         cs_size_inmb=round(float(compressed_size/2**20),4)
         print(f"\nCompressed Size: {cs_size_inmb} MB\nCompression Percentage: {round((original_size-compressed_size)/original_size*100,2)}%")
+        
         # Removing the image from the input directory to dustbin folder
         os.makedirs("Image Operation/Dustbin", exist_ok=True)
         os.rename(f"Image Operation/Input/{filename}", f"Image Operation/Dustbin/{filename}")
@@ -58,30 +59,30 @@ if run=="yes":
     
     elif method=="2":
             src = cv2.imread(f"Image Operation/Input/{filename}", cv2.IMREAD_UNCHANGED)
-            print(f'Original Dimensions (w*h): {src.shape[1]}x{src.shape[0]}')
+            print(f'\nOriginal Dimensions (w*h): {src.shape[1]}x{src.shape[0]}')
             print("1. Dimensions to which you want to scale your image (width, height)\n2. The \'%\' to which you want to scale your image (dimensions)")
             while True:
-                dimorpercent=input("Enter 1 or 2: ")
+                dimorpercent=input("\nEnter 1 or 2: ")
                 if dimorpercent=="1":
                     while True:
                         try:
-                            new_width=input("Enter the dimensions(width): ")
+                            new_width=input("\nEnter the dimensions(width): ")
                             new_height=input("Enter the dimensions(height): ")
                             new_width = int(new_width)
                             new_height = int(new_height)
                             times_w=new_width/src.shape[1]
                             times_h=new_width/src.shape[0]
-                            if times_w>10 or times_h>10:
+                            if (times_w>=10 or times_h>=10) or (times_w==0 or times_h==0):
                                 raise Exception("The dimensions you entered are x10 greater than the original dimensions")
                             break
                         except Exception as e:
                             print(e)
                     break
                 elif dimorpercent=="2":
-                    scale_percent = int(input("Enter the \'%\' to which you want to scale your image (dimensions): "))
                     while True:
+                        scale_percent = int(input("\nEnter the \'%\' to which you want to scale your image dimensions (1-1000): "))
                         try:
-                            if scale_percent<1000:
+                            if scale_percent<1000 and scale_percent>0:
                                 new_width = int(src.shape[1] * scale_percent / 100)
                                 new_height = int(src.shape[0] * scale_percent / 100)
                                 break
