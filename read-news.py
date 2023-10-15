@@ -8,15 +8,22 @@ api_key = "b0d19ed15a354c288823a2846cfb3d2a"
 current_year = time.strftime("%Y",time.localtime())
 current_month = time.strftime("%m",time.localtime())
 current_date = time.strftime("%d",time.localtime())
+
 yest_int_date = int(current_date)-2
 if yest_int_date<10:
     yest_int_date=f"0{yest_int_date}"
 previous_month = int(current_month)-1
 if previous_month<10:
     previous_month=f"0{previous_month}"
+    previous_year=current_year
+    if previous_month==0:
+        previous_month="12"
+        previous_year=int(current_year)-1
 tommorow_date = int(current_date)+1
+if tommorow_date<10:
+    tommorow_date=f"0{tommorow_date}"
 
-print(f"How would you like to Read?\n1. Today's Headlines\n2. News from ({yest_int_date}-{current_month}-{current_year} to {tommorow_date}-{previous_month}-{current_year})\n3. Specific Topic\n")
+print(f"How would you like to Read?\n1. Today's Headlines\n2. News from ({yest_int_date}-{current_month}-{current_year} to {tommorow_date}-{previous_month}-{previous_year})\n3. Specific Topic\n")
 while True:
     try:
         choice=input("Enter your choice(1/2/3): ")
@@ -61,10 +68,10 @@ if choice=="1":
 if choice=="2":
     while True:
         try:
-            date=input(f"Enter any date between ({yest_int_date}-{current_month}-{current_year} till {tommorow_date}-{previous_month}-{current_year}) in DD-MM-YYYY format: ")
+            date=input(f"Enter any date between ({yest_int_date}-{current_month}-{current_year} till {tommorow_date}-{previous_month}-{previous_year}) in DD-MM-YYYY format: ")
             if len(date)==10:
-                if (int(date[6:10])==current_year) and (int(date[3:5])>0 and int(date[3:5])<=12) and (int(date[0:2])>0 and int(date[0:2])<=31):
-                        if int(date[3:5])<int(current_month) and int(date[0:2])<=int(yest_int_date):
+                if (int(date[6:10])==current_year or int(date[6:10]==previous_year)) and (int(date[3:5])>0 and int(date[3:5])<=12) and (int(date[0:2])>0 and int(date[0:2])<=31):
+                        if (int(date[3:5])<int(current_month) or int(date[3:5]==int(previous_month))) and int(date[0:2])<=int(yest_int_date):
                             break
                         elif int(date[3:5])==int(current_month):
                             if (int(date[0:2])>0 and int(date[0:2])<int(current_date)-1):
