@@ -71,12 +71,14 @@ if run=="yes":
                             new_width = int(new_width)
                             new_height = int(new_height)
                             times_w=new_width/src.shape[1]
-                            times_h=new_width/src.shape[0]
+                            times_h=new_height/src.shape[0]
                             if (times_w>=10 or times_h>=10):
-                                raise Exception("The dimensions you entered are x10 greater than the original dimensions")
+                                raise Exception("Dimensions entered x10 greater than the original dimensions are not accepted")
                             elif (times_w<=0 or times_h<=0):
                                 raise Exception("The dimensions you entered are 0 or -ve")
                             break
+                        except ValueError:
+                            print("Invalid Input")
                         except Exception as e:
                             print(e)
                     break
@@ -88,8 +90,12 @@ if run=="yes":
                                 new_width = int(src.shape[1] * scale_percent / 100)
                                 new_height = int(src.shape[0] * scale_percent / 100)
                                 break
-                            else:
+                            elif scale_percent>=1000:
                                 raise Exception("The image cannot be scaled to more than x10 or 1000% than the original dimensions")
+                            elif scale_percent<=0:
+                                raise Exception("The image cannot be scaled to 0 or -ve dimensions")
+                            else:
+                                raise Exception("Invalid Input")
                         except Exception as e:
                             print(e)
                     break
