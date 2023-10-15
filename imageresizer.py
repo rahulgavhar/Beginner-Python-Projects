@@ -10,7 +10,7 @@ directory="Image Operation/Input"
 filenames=os.listdir(directory)
 try:
     for file_name in filenames:
-        if file_name.endswith(".jpg") or file_name.endswith(".png"):
+        if file_name.endswith(".jpg") or file_name.endswith(".png") or file_name.endswith(".jpeg"):
             filename=file_name
             run="yes"
             break
@@ -72,8 +72,10 @@ if run=="yes":
                             new_height = int(new_height)
                             times_w=new_width/src.shape[1]
                             times_h=new_width/src.shape[0]
-                            if (times_w>=10 or times_h>=10) or (times_w==0 or times_h==0):
+                            if (times_w>=10 or times_h>=10):
                                 raise Exception("The dimensions you entered are x10 greater than the original dimensions")
+                            elif (times_w==0 or times_h==0):
+                                raise Exception("The dimensions you entered are 0")
                             break
                         except Exception as e:
                             print(e)
@@ -90,7 +92,6 @@ if run=="yes":
                                 raise Exception("The image cannot be scaled to more than 10 times or 1000% ")
                         except Exception as e:
                             print(e)
-                            continue
                     break
                 else:
                     print("Invalid Input")
