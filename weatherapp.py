@@ -2,7 +2,7 @@ import requests
 import datetime as dt
 from geopy.geocoders import Nominatim
 
-print("Welcome to the Weather App\n",end="")
+print("Welcome to the Weather App!!\n",end="")
 
 APIkey="189cc4be21b68b09731e83519bdafed6"
 while True:
@@ -18,7 +18,7 @@ while True:
 
 #response is a dictionary
 response=requests.get(url).json()
-print(f"\nCurrent Weather Report of {city}\n")
+print(f"\n*Current Weather Report of {city}*\n")
 def kelvin_to_celsius(t):
     return f"{round(t-273.15,2)}°C", f"{round(((t-273.15)*(9/5))+32,2)}°F"
 
