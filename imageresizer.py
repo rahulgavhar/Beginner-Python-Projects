@@ -84,8 +84,8 @@ if run=="yes":
                     break
                 elif dimorpercent=="2":
                     while True:
-                        scale_percent = int(input("\nEnter the \'%\' to which you want to scale your image dimensions (1-999): "))
                         try:
+                            scale_percent = int(input("\nEnter the \'%\' to which you want to scale your image dimensions (1-999): "))
                             if scale_percent<1000 and scale_percent>0:
                                 new_width = int(src.shape[1] * scale_percent / 100)
                                 new_height = int(src.shape[0] * scale_percent / 100)
@@ -96,6 +96,8 @@ if run=="yes":
                                 raise Exception("The image cannot be scaled to 0 or -ve dimensions")
                             else:
                                 raise Exception("Invalid Input")
+                        except ValueError:
+                            print("Invalid Input")
                         except Exception as e:
                             print(e)
                     break
