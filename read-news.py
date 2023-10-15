@@ -23,6 +23,20 @@ tommorow_date = int(current_date)+1
 if tommorow_date<10:
     tommorow_date=f"0{tommorow_date}"
 
+if int(current_date)<=2:
+    yest_int_date=30
+    previous_month=int(current_month)-1
+    if previous_month<10:
+        previous_month=f"0{previous_month}"
+        previous_year=current_year
+        if previous_month==0:
+            previous_month="12"
+            previous_year=int(current_year)-1
+    tommorow_date=int(current_date)+1
+    if tommorow_date<10:
+        tommorow_date=f"0{tommorow_date}"
+
+#starts the program
 print(f"How would you like to Read?\n1. Today's Headlines\n2. News from ({yest_int_date}-{current_month}-{current_year} to {tommorow_date}-{previous_month}-{previous_year})\n3. Specific Topic\n")
 while True:
     try:

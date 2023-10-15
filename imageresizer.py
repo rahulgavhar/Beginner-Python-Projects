@@ -74,22 +74,22 @@ if run=="yes":
                             times_h=new_width/src.shape[0]
                             if (times_w>=10 or times_h>=10):
                                 raise Exception("The dimensions you entered are x10 greater than the original dimensions")
-                            elif (times_w==0 or times_h==0):
-                                raise Exception("The dimensions you entered are 0")
+                            elif (times_w<=0 or times_h<=0):
+                                raise Exception("The dimensions you entered are 0 or -ve")
                             break
                         except Exception as e:
                             print(e)
                     break
                 elif dimorpercent=="2":
                     while True:
-                        scale_percent = int(input("\nEnter the \'%\' to which you want to scale your image dimensions (1-1000): "))
+                        scale_percent = int(input("\nEnter the \'%\' to which you want to scale your image dimensions (1-999): "))
                         try:
                             if scale_percent<1000 and scale_percent>0:
                                 new_width = int(src.shape[1] * scale_percent / 100)
                                 new_height = int(src.shape[0] * scale_percent / 100)
                                 break
                             else:
-                                raise Exception("The image cannot be scaled to more than 10 times or 1000% ")
+                                raise Exception("The image cannot be scaled to more than x10 or 1000% than the original dimensions")
                         except Exception as e:
                             print(e)
                     break
