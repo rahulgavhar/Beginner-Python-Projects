@@ -1,53 +1,70 @@
 import requests
 import json
 import time
+import pycountry
 
-print("How would you like to Read?\n1. Top Headlines\n2. For Specific Date\n(1-Top Headlines 2-Specific Date)\n")
+api_key = "b0d19ed15a354c288823a2846cfb3d2a"
+
+current_year = time.strftime("%Y",time.localtime())
+current_month = time.strftime("%m",time.localtime())
+current_date = time.strftime("%d",time.localtime())
+yest_int_date = int(current_date)-2
+if yest_int_date<10:
+    yest_int_date=f"0{yest_int_date}"
+previous_month = int(current_month)-1
+if previous_month<10:
+    previous_month=f"0{previous_month}"
+tommorow_date = int(current_date)+1
+
+print(f"How would you like to Read?\n1. Today's Headlines\n2. News from ({yest_int_date}-{current_month}-{current_year} to {tommorow_date}-{previous_month}-{current_year})\n3. Specific Topic\n")
 while True:
     try:
-        choice=input("Enter your choice(1/2): ")
-        if choice=="1" or choice=="2":
+        choice=input("Enter your choice(1/2/3): ")
+        if choice=="1" or choice=="2" or choice=="3":
             break
         else:
-            raise ValueError
-    except ValueError:
+            raise Exception
+    except Exception:
         print("Invalid Choice\n")
         time.sleep(1)
 
 # Error Handeling for Top Headlines
 if choice=="1":
-    url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=b0d19ed15a354c288823a2846cfb3d2a"
+    while True:
+        try:
+            country=input("Enter your Country Name: ")
+            cc=pycountry.countries.search_fuzzy(country)[0].alpha_2
+            break
+        except Exception:
+            print("Invalid Country Name")
+            time.sleep(1)
+        
+    url = f"https://newsapi.org/v2/top-headlines?country={cc}&apiKey={api_key}"
 
     response = requests.get(url)
     news = json.loads(response.text)
-
-    for article in news["articles"]:
-        print("----------------------------------")
-        print("Article:")
-        print(article["title"])
-        print()
-        print("Description:")
-        print(article["description"])
-        print("More info:",end=" ")
-        print(article["url"])
-
+    
+    if news["articles"]!=[]:
+        for article in news["articles"]:
+            print("----------------------------------")
+            print("Article:")
+            print(article["title"])
+            print()
+            print("Description:")
+            print(article["description"])
+            print("More info:",end=" ")
+            print(article["url"])
+    else:
+        print(f"No Articles Found for {country}")
+        
 # Error Handeling For Specific Date
 if choice=="2":
-    topic=input("Enter a topic: ")
-    current_year = time.strftime("%Y",time.localtime())
-    current_month = time.strftime("%m",time.localtime())
-    current_date = time.strftime("%d",time.localtime())
-    yest_int_date = int(current_date)-2
-    if yest_int_date<10:
-        yest_int_date=f"0{yest_int_date}"
     while True:
         try:
-            date=input(f"Enter any date between ({yest_int_date}-{current_month}-{current_year} till 2016) in DD-MM-YYYY format: ")
+            date=input(f"Enter any date between ({yest_int_date}-{current_month}-{current_year} till {tommorow_date}-{previous_month}-{current_year}) in DD-MM-YYYY format: ")
             if len(date)==10:
-                if (int(date[6:10])>2015) and (int(date[6:10])<int(current_year)) and (int(date[3:5])>0 and int(date[3:5])<=12) and (int(date[0:2])>0 and int(date[0:2])<=31):
-                    break
-                elif int(date[6:10])==int(current_year):
-                        if (int(date[3:5])>0 and int(date[3:5])<int(current_month)and(int(date[0:2])>0 and int(date[0:2])<=31)):
+                if (int(date[6:10])==current_year) and (int(date[3:5])>0 and int(date[3:5])<=12) and (int(date[0:2])>0 and int(date[0:2])<=31):
+                        if int(date[3:5])<int(current_month) and int(date[0:2])<=int(yest_int_date):
                             break
                         elif int(date[3:5])==int(current_month):
                             if (int(date[0:2])>0 and int(date[0:2])<int(current_date)-1):
@@ -72,19 +89,42 @@ if choice=="2":
 
     #converts date to YYYY-MM-DD format
     date=date[6:10]+"-"+date[3:5]+"-"+date[0:2]
-
-    url = f"https://newsapi.org/v2/everything?q={topic}&from={date}&sortBy=popularity&apiKey=b0d19ed15a354c288823a2846cfb3d2a"
+    url = f"https://newsapi.org/v2/everything?q={date}&from={date}&sortBy=relevancy&apiKey={api_key}"
 
     response = requests.get(url)
     news = json.loads(response.text)
 
-    for article in news["articles"]:
-        print("----------------------------------")
-        print("Article:")
-        print(article["title"])
-        print()
-        print("Description:")
-        print(article["description"])
-        print()
-        print("More info:",end=" ")
-        print(article["url"])
+    if news["articles"]!=[]:
+        for article in news["articles"]:
+            print("----------------------------------")
+            print("Article:")
+            print(article["title"])
+            print()
+            print("Description:")
+            print(article["description"])
+            print()
+            print("More info:",end=" ")
+            print(article["url"])
+    else:
+        print(f"Cannot show news for {date}")
+        
+if choice=="3":
+    topic=input("Enter the topic: ")
+    url = f"https://newsapi.org/v2/everything?q={topic}&language=en&from=&sortBy=relevancy&pagesize=25&apiKey={api_key}"
+
+    response = requests.get(url)
+    news = json.loads(response.text)
+
+    if news["articles"]!=[]:
+        for article in news["articles"]:
+            print("----------------------------------")
+            print("Article:")
+            print(article["title"])
+            print()
+            print("Description:")
+            print(article["description"])
+            print()
+            print("More info:",end=" ")
+            print(article["url"])
+    else:
+        print(f"No Articles Found for {topic}")
