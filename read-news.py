@@ -73,16 +73,17 @@ elif current_date=="31":
 elif current_date=="30":
     if current_month=="04" or current_month=="06" or current_month=="09" or current_month=="11":
         tommorow_date="01"
-        print(f"How would you like to Read?\n1. Today's Headlines\n2. News from ({yest_int_date}-{previous_month}-{previous_year} to {tommorow_date}-{previous_month}-{previous_year})\n3. Specific Topic\n")
-if current_date=="29":
+        print(f"How would you like to Read?\n1. Today's Headlines\n2. News from ({yest_int_date}-{current_month}-{current_year} to {tommorow_date}-{previous_month}-{current_year})\n3. Specific Topic\n")
+elif current_date=="29":
     if int(current_year)%4==0 and current_month=="02":
         tommorow_date="01"
-        print(f"How would you like to Read?\n1. Today's Headlines\n2. News from ({yest_int_date}-{previous_month}-{previous_year} to {tommorow_date}-{previous_month}-{previous_year})\n3. Specific Topic\n")
-if current_date=="28":
+        print(f"How would you like to Read?\n1. Today's Headlines\n2. News from ({yest_int_date}-{current_month}-{current_year} to {tommorow_date}-{previous_month}-{current_year})\n3. Specific Topic\n")
+elif current_date=="28":
     if int(current_year)%4!=0 and current_month=="02":
         tommorow_date="01"
-        print(f"How would you like to Read?\n1. Today's Headlines\n2. News from ({yest_int_date}-{previous_month}-{previous_year} to {tommorow_date}-{previous_month}-{previous_year})\n3. Specific Topic\n")
-    
+        print(f"How would you like to Read?\n1. Today's Headlines\n2. News from ({yest_int_date}-{current_month}-{current_year} to {tommorow_date}-{previous_month}-{current_year})\n3. Specific Topic\n")
+else:
+    print(f"How would you like to Read?\n1. Today's Headlines\n2. News from ({yest_int_date}-{current_month}-{current_year} to {tommorow_date}-{previous_month}-{current_year})\n3. Specific Topic\n")
 #starts the program
 
 while True:
