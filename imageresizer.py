@@ -10,6 +10,8 @@ directory="Image Operation/Input"
 filenames=os.listdir(directory)
 try:
     for file_name in filenames:
+        if not (file_name.endswith(".jpg") or file_name.endswith(".png") or file_name.endswith(".jpeg")):
+            continue
         if file_name.endswith(".jpg") or file_name.endswith(".png") or file_name.endswith(".jpeg"):
             filename=file_name
             run="yes"
