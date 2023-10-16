@@ -9,16 +9,19 @@ api_key = "b0d19ed15a354c288823a2846cfb3d2a"
 current_year = time.strftime("%Y",time.localtime())
 current_month = time.strftime("%m",time.localtime())
 current_date = time.strftime("%d",time.localtime())
-print(type(current_date))
+
 yest_int_date = int(current_date)-2
 if yest_int_date<10:
     yest_int_date=f"0{yest_int_date}"
+
 previous_month = int(current_month)-1
 if previous_month<10:
     previous_month=f"0{previous_month}"
+
 tommorow_date = int(current_date)+1
 if tommorow_date<10:
     tommorow_date=f"0{tommorow_date}"
+
 previous_year = int(current_year)-1
 
 #previous date and month computation
@@ -26,57 +29,61 @@ if current_date=="01":
     if current_month=="01":
         yest_int_date="30"
         previous_month="12"
+        print(f"How would you like to Read?\n1. Today's Headlines\n2. News from ({yest_int_date}-{previous_month}-{previous_year} to {tommorow_date}-{previous_month}-{previous_year})\n3. Specific Topic\n")
     #leap year
     if current_month=="03":
         if int(current_year)%4==0:
             yest_int_date="28"
-        else:
+            print(f"How would you like to Read?\n1. Today's Headlines\n2. News from ({yest_int_date}-{previous_month}-{current_year} to {tommorow_date}-{previous_month}-{current_year})\n3. Specific Topic\n")
+        elif int(current_year)%4!=0:
             yest_int_date="27"
-        previous_month=int(current_month)-1
+            print(f"How would you like to Read?\n1. Today's Headlines\n2. News from ({yest_int_date}-{previous_month}-{current_year} to {tommorow_date}-{previous_month}-{current_year})\n3. Specific Topic\n")
     if current_month=="05" or current_month=="07" or current_month=="10" or current_month=="12":
         yest_int_date="29"
-        previous_month=int(current_month)-1
+        print(f"How would you like to Read?\n1. Today's Headlines\n2. News from ({yest_int_date}-{previous_month}-{current_year} to {tommorow_date}-{previous_month}-{current_year})\n3. Specific Topic\n")
     if current_month=="02" or current_month=="04" or  current_month=="06" or current_month=="08" or current_month=="09" or current_month=="11":
         yest_int_date="30"
-        previous_month=int(current_month)-1
+        print(f"How would you like to Read?\n1. Today's Headlines\n2. News from ({yest_int_date}-{previous_month}-{current_year} to {tommorow_date}-{previous_month}-{current_year})\n3. Specific Topic\n")
 
 elif current_date=="02":
     if current_month=="01":
         yest_int_date="31"
         previous_month="12"
+        print(f"How would you like to Read?\n1. Today's Headlines\n2. News from ({yest_int_date}-{previous_month}-{previous_year} to {tommorow_date}-{previous_month}-{previous_year})\n3. Specific Topic\n")
     #leap year
     if current_month=="03":
         if int(current_year)%4==0:
             yest_int_date="29"
+            print(f"How would you like to Read?\n1. Today's Headlines\n2. News from ({yest_int_date}-{previous_month}-{current_year} to {tommorow_date}-{previous_month}-{current_year})\n3. Specific Topic\n")
         else:
             yest_int_date="28"
+            print(f"How would you like to Read?\n1. Today's Headlines\n2. News from ({yest_int_date}-{previous_month}-{previous_year} to {tommorow_date}-{previous_month}-{previous_year})\n3. Specific Topic\n")
     if current_month=="05" or current_month=="07" or current_month=="10" or current_month=="12":
         yest_int_date="30"
-        previous_month=int(current_month)-1
+        print(f"How would you like to Read?\n1. Today's Headlines\n2. News from ({yest_int_date}-{previous_month}-{previous_year} to {tommorow_date}-{previous_month}-{previous_year})\n3. Specific Topic\n")
     if current_month=="2" or current_month=="04" or current_month=="06" or current_month=="08" or current_month=="09" or current_month=="11":
         yest_int_date="31"
-        previous_month=int(current_month)-1
+        print(f"How would you like to Read?\n1. Today's Headlines\n2. News from ({yest_int_date}-{previous_month}-{previous_year} to {tommorow_date}-{previous_month}-{previous_year})\n3. Specific Topic\n")
         
 #tomorrow date
 elif current_date=="31":
     if current_month=="01" or current_month=="3" or current_month=="05" or current_month=="07" or current_month=="08" or current_month=="10" or current_month=="12":
         tommorow_date="01"
+        print(f"How would you like to Read?\n1. Today's Headlines\n2. News from ({yest_int_date}-{previous_month}-{previous_year} to {tommorow_date}-{previous_month}-{previous_year})\n3. Specific Topic\n")
 elif current_date=="30":
     if current_month=="04" or current_month=="06" or current_month=="09" or current_month=="11":
         tommorow_date="01"
-
-if int(current_year)%4==0:
-    if current_date=="29" and current_month=="02":
+        print(f"How would you like to Read?\n1. Today's Headlines\n2. News from ({yest_int_date}-{previous_month}-{previous_year} to {tommorow_date}-{previous_month}-{previous_year})\n3. Specific Topic\n")
+if current_date=="29":
+    if int(current_year)%4==0 and current_month=="02":
         tommorow_date="01"
-if int(current_year)%4!=0:
-    if current_date=="28" and current_month=="02":
+        print(f"How would you like to Read?\n1. Today's Headlines\n2. News from ({yest_int_date}-{previous_month}-{previous_year} to {tommorow_date}-{previous_month}-{previous_year})\n3. Specific Topic\n")
+if current_date=="28":
+    if int(current_year)%4!=0 and current_month=="02":
         tommorow_date="01"
+        print(f"How would you like to Read?\n1. Today's Headlines\n2. News from ({yest_int_date}-{previous_month}-{previous_year} to {tommorow_date}-{previous_month}-{previous_year})\n3. Specific Topic\n")
     
 #starts the program
-if current_date=="01" and current_month=="01":
-    print(f"How would you like to Read?\n1. Today's Headlines\n2. News from ({yest_int_date}-{previous_month}-{previous_year} to {tommorow_date}-{previous_month}-{previous_year})\n3. Specific Topic\n")
-elif current_date=="02" and current_month=="01":
-    print(f"How would you like to Read?\n1. Today's Headlines\n2. News from ({yest_int_date}-{previous_month}-{previous_year} to {tommorow_date}-{previous_month}-{previous_year})\n3. Specific Topic\n")
 
 while True:
     try:
