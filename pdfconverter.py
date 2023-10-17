@@ -2,8 +2,6 @@
 import PyPDF2
 from PyPDF2 import PdfReader, PdfWriter
 import os
-from typing import Union, Literal, List
-from pathlib import Path
 from pdf2image import convert_from_path
 from PIL import Image
 
