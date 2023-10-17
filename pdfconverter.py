@@ -25,8 +25,15 @@ else:
                 xx=".pdf"
             elif input_operation=="7":
                 while True:
+                    check_img_files=[]
+                    for file_name in filenames:
+                        if file_name.endswith(".jpg") or file_name.endswith(".jpeg") or file_name.endswith(".png"):
+                            check_img_files.append(file_name)
+                    if len(check_img_files)==0:
+                        xx=".xyz"
+                        break
                     try:
-                        xx=input("Enter the image file extension\n(eg- .jpg, .jpeg, .png): ")
+                        xx=input("\nEnter the image file extension\n(eg- .jpg, .jpeg, .png): ")
                         if xx==".jpg" or xx==".jpeg" or xx==".png":
                             break
                         else:
@@ -52,7 +59,7 @@ else:
                 elif f_count>1:
                     raise Exception("More than 1 files are not accepted")
                 elif f_count==1 and input_operation=="1":
-                    raise Exception("1 PDF file is not accepted for Merging PDFs")
+                    raise Exception("Single PDF file is not accepted for Merging PDFs")
                 elif f_count==1:
                     run="yes"
                 break
@@ -206,11 +213,10 @@ else:
                 use_lesspdfs=[]
                 def convert_to_pdf(filenames_list):
                     for filename in filenames_list:
-                        image = Image.open(filename)
-                        if image.mode == "RGBA":
-                            img = image.convert("RGB")
-                        new_pdf = f"Pdf Operation/Input/{filename.split('.')[0]}.pdf"
-                        img.save(f"Pdf Operation/Input{new_pdf}", "PDF", resolution=100.0)
+                        image = Image.open(f"Pdf Operation/Input/{filename}")
+                        img = image.convert("RGB")
+                        new_pdf = f"{filename.split('.')[0]}.pdf"
+                        img.save(f"Pdf Operation/Input/{new_pdf}", "PDF", resolution=100.0)
                         global use_lesspdfs
                         use_lesspdfs.append(new_pdf)
                 convert_to_pdf(filenames_list)
@@ -219,19 +225,19 @@ else:
                 merger=PyPDF2.PdfWriter()
                 for file in use_lesspdfs:
                     merger.append(f"Pdf Operation/Input/{file}")
-                new_pdf=input("Enter the output file name(excluding '.pdf'): ")
-                merger.write(f"Pdf Operation/Output/{new_pdf}.pdf")
+                new_merged_pdf=input("Enter the output PDF file name (excluding '.pdf'): ")
+                merger.write(f"Pdf Operation/Output/{new_merged_pdf}.pdf")
                     
-                print("Image converted to PDF successfully (location: Pdf Operation/Output)")
+                print(f"Image converted to {new_merged_pdf}.pdf successfully (location: Pdf Operation/Output)")
                 status="success"
             except:
-                print("PDF Conversion Failed")
+                print("PDF Conversion Failed.")
                 status="failed"
             if status=="success":
                 # Removing the pdf from the input directory to dustbin folder
                 os.makedirs("Pdf Operation/Dustbin", exist_ok=True)
-                for filename in use_lesspdfs:
-                    os.remove(f"Pdf Operation/Input/{filename}")
+                for f in use_lesspdfs:
+                    os.remove(f"Pdf Operation/Input/{f}")
                 for filename in filenames_list:
                     os.rename(f"Pdf Operation/Input/{filename}", f"Pdf Operation/Dustbin/{filename}")
                 
