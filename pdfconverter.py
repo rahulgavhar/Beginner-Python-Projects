@@ -1,3 +1,4 @@
+#Requires: poppler-23.08.0, pdf2image, PyPDF2, Pillow, pathlib
 import PyPDF2
 from PyPDF2 import PdfReader, PdfWriter
 import os
@@ -26,11 +27,11 @@ else:
             elif input_operation=="7":
                 while True:
                     check_img_files=[]
-                    for file_name in filenames:
+                    for file_name in filtered_files:
                         if file_name.endswith(".jpg") or file_name.endswith(".jpeg") or file_name.endswith(".png"):
                             check_img_files.append(file_name)
                     if len(check_img_files)==0:
-                        xx=".xyz"
+                        xx=".xyzxyzxyz"
                         break
                     try:
                         xx=input("\nEnter the image file extension\n(eg- .jpg, .jpeg, .png): ")
@@ -195,7 +196,7 @@ else:
             pass
         elif input_operation=="6":
             try:
-                images=convert_from_path(f"Pdf Operation/Input/{filename}",500,poppler_path=r'C:\Program Files\poppler-23.08.0\Library\bin')
+                images=convert_from_path(f"Pdf Operation/Input/{filename}",100,poppler_path=r'C:\Program Files\poppler-23.08.0\Library\bin')
                 for i in range(len(images)):
                     images[i].save(f"Pdf Operation/Output/{filename.split('.')[0]}_{i+1}.jpg", 'JPEG')
                 print("PDF converted to image successfully (location: Pdf Operation/Output)")
