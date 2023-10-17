@@ -92,10 +92,11 @@ else:
                 for filename in filenames_list:
                     merger.append(f"Pdf Operation/Input/{filename}")
                 output_file_name=input("Enter the output file name(excluding '.pdf'): ")
+                output_file_name=output_file_name.replace(" ","-")
                 merger.write(f"Pdf Operation/Output/{output_file_name}.pdf")
                 print("PDFs merged successfully (location: Pdf Operation/Output)")
                 status="success"
-                confidential=input("Do you want to add a password to the merged File? (yes/no): ")
+                confidential=input("Do you want to add a password to the merged File? (Enter 'yes' to proceed): ")
                 if confidential=="yes":
                     reader=PdfReader(f"Pdf Operation/Output/{output_file_name}.pdf")
                     writer=PdfWriter()
@@ -163,40 +164,50 @@ else:
                 
                 
         elif input_operation=="4":
-            def watermark(
-                content_pdf: Path,
-                stamp_pdf: Path,
-                pdf_result: Path,
-                page_indices: Union[Literal["ALL"], List[int]] = "ALL",
-            ):
-                    reader = PdfReader(content_pdf)
-                    if page_indices == "ALL":
-                        page_indices = list(range(0, len(reader.pages)))
-                    writer = PdfWriter()
-                    for index in page_indices:
-                        content_page = reader.pages[index]
-                        mediabox = content_page.mediabox
-
-                        # You need to load it again, as the last time it was overwritten
-                        reader_stamp = PdfReader(stamp_pdf)
-                        image_page = reader_stamp.pages[0]
-
-                        image_page.merge_page(content_page)
-                        image_page.mediabox = mediabox
-                        writer.add_page(image_page)
-                    writer.write(pdf_result)
-            stamp_pdf=input("Enter the Watermark pdf file name: ")
-            stamp_pdf=f"Pdf Operation/Input/{stamp_pdf}"
-            # Removing the pdf from the input directory to dustbin folder
-            os.makedirs("Pdf Operation/Dustbin", exist_ok=True)
-            for filename in filenames_list:
-                os.rename(f"Pdf Operation/Input/{filename}", f"Pdf Operation/Dustbin/{filename}")
+            try:
+                wm_img=os.path.basename("Pdf Operation/watermark-bg/watermark.pdf")
+                reader = PdfReader(f"Pdf Operation/Input/{filename}")
+                writer = PdfWriter()
+                for page in reader.pages:
+                    watermark_pdf = PdfReader(f"Pdf Operation/watermark-bg/{wm_img}")
+                    watermark_page = watermark_pdf.pages[0]
+                    watermark_page.merge_page(page)
+                    writer.add_page(watermark_page)
+                writer.write(f"Pdf Operation/Output/{filename.split('.')[0]}_watermarked.pdf")
+                print("Watermark successfully Added(location: Pdf Operation/Output)")
+                status="success"
+            except Exception as e:
+                print("Watermark Process Failed",e)
+                status="failed"
+            if status=="success":
+                # Removing the pdf from the input directory to dustbin folder
+                os.makedirs("Pdf Operation/Dustbin", exist_ok=True)
+                for filename in filenames_list:
+                    os.rename(f"Pdf Operation/Input/{filename}", f"Pdf Operation/Dustbin/{filename}")
                 
         elif input_operation=="5":
-            pass
+            try:
+                reader=PdfReader(f"Pdf Operation/Input/{filename}")
+                writer=PdfWriter()
+                for page in reader.pages:
+                    page.compress_content_streams()
+                    writer.add_page(page)
+                new_com_pdf=filename.split(".")[0]
+                writer.write(f"Pdf Operation/Output/{new_com_pdf}_compressed.pdf")
+                print("PDF size compressed successfully (location: Pdf Operation/Output)")
+                status="success"
+            except Exception as e:
+                print("PDF size reduction Failed",e)
+                status="failed"
+            if status=="success":
+                # Removing the pdf from the input directory to dustbin folder
+                os.makedirs("Pdf Operation/Dustbin", exist_ok=True)
+                for filename in filenames_list:
+                    os.rename(f"Pdf Operation/Input/{filename}", f"Pdf Operation/Dustbin/{filename}")
+                    
         elif input_operation=="6":
             try:
-                images=convert_from_path(f"Pdf Operation/Input/{filename}",100,poppler_path=r'C:\Program Files\poppler-23.08.0\Library\bin')
+                images=convert_from_path(f"Pdf Operation/Input/{filename}",200,poppler_path=r'C:\Program Files\poppler-23.08.0\Library\bin')
                 for i in range(len(images)):
                     images[i].save(f"Pdf Operation/Output/{filename.split('.')[0]}_{i+1}.jpg", 'JPEG')
                 print("PDF converted to image successfully (location: Pdf Operation/Output)")
@@ -209,6 +220,7 @@ else:
                 os.makedirs("Pdf Operation/Dustbin", exist_ok=True)
                 for filename in filenames_list:
                     os.rename(f"Pdf Operation/Input/{filename}", f"Pdf Operation/Dustbin/{filename}")
+                    
         elif input_operation=="7":
             try:
                 use_lesspdfs=[]
@@ -227,6 +239,8 @@ else:
                 for file in use_lesspdfs:
                     merger.append(f"Pdf Operation/Input/{file}")
                 new_merged_pdf=input("Enter the output PDF file name (excluding '.pdf'): ")
+                #remove whitespaces from the filename
+                new_merged_pdf=new_merged_pdf.replace(" ","-")
                 merger.write(f"Pdf Operation/Output/{new_merged_pdf}.pdf")
                     
                 print(f"Image converted to {new_merged_pdf}.pdf successfully (location: Pdf Operation/Output)")
