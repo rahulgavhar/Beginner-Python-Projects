@@ -31,31 +31,46 @@ def winstatus(listx, listo):
             print("O Won the match")
             return 0
     return -1
+
 entered=[]
+total=[1,2,3,4,5,6,7,8,9]
 listx = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 listo = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 turn = randint(0, 1)
 print("Welcome to 2 Player TicTacToe Game")
 while True:
+    valid=[x for x in total if x not in entered]
     play(listx, listo)
     if turn == 1:
         while True:
-            print("\nX's Chance")
-            valuex = int(input("Please enter a value: "))
-            if valuex in entered:
-                print("X/O is already entered in this position")
-            else:
-                break
+            try:
+                print("\nX's Chance")
+                valuex = int(input("Please enter a value: "))
+                if valuex in total:
+                    if valuex in entered:
+                        print("X/O is already entered in this position")
+                    else:
+                        break
+                else:
+                    raise Exception
+            except Exception:
+                print(f"Please enter value from {valid}")
         entered.append(valuex)
         listx[valuex-1] = 1
     else:
         while True:
-            print("\nO's Chance")
-            valueo = int(input("Please enter a value: "))
-            if valueo in entered:
-                print("X/O is already entered in this position")
-            else:
-                break
+            try:
+                print("\nO's Chance")
+                valueo = int(input("Please enter a value: "))
+                if valueo in total:
+                    if valueo in entered:
+                        print("X/O is already entered in this position")
+                    else:
+                        break
+                else:
+                    raise Exception
+            except Exception:
+                print(f"Please enter value from {valid}")
         entered.append(valueo)
         listo[valueo-1] = 1
     cwin = winstatus(listx, listo)
