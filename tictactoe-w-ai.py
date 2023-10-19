@@ -97,20 +97,30 @@ def next_move():
             case="done"
     if case=="corner":
         case="random"
-        corner_list=[]
-        if (listx[0]!=1 and listo[0]!=1):
-            corner_list.append(0)
-            case="done"
-        if (listx[2]!=1 and listo[2]!=1):
-            corner_list.append(2)
-            case="done"
-        if (listx[6]!=1 and listo[6]!=1):
-            corner_list.append(6)
-            case="done"
-        if (listx[8]!=1 and listo[8]!=1):
-            corner_list.append(8)
-            case="done"
-        valuex=corner_list[randint(0,len(corner_list)-1)]+1
+        if oentered==[1,9] or oentered==[3,7]:
+            valuex=r.choice((2,4,6,8))
+            case="side"
+        if case!="side":
+            while True:
+                try:
+                    corner_list=[]
+                    if (listx[0]!=1 and listo[0]!=1):
+                        corner_list.append(0)
+                        case="done"
+                    if (listx[2]!=1 and listo[2]!=1):
+                        corner_list.append(2)
+                        case="done"
+                    if (listx[6]!=1 and listo[6]!=1):
+                        corner_list.append(6)
+                        case="done"
+                    if (listx[8]!=1 and listo[8]!=1):
+                        corner_list.append(8)
+                        case="done"
+                    valuex=corner_list[randint(0,len(corner_list)-1)]+1
+                    break
+                except:
+                    break
+        
     if case=="random":
         valuex=valid[randint(0,len(valid)-1)]
         
@@ -118,7 +128,7 @@ while True:
     if turn == 1:
         sleep(1)
         print("\nComputer's Turn")
-        sleep(2)
+        sleep(1)
         #computer played first
         
         next_move()
