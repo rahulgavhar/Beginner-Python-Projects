@@ -30,10 +30,10 @@ def winstatus(listx, listo, valid):
             play(listx, listo)
             print("O Won the match")
             return 0
-        if valid == []:
-            play(listx, listo)
-            print("Match Draw")
-            return 2
+    if valid == []:
+        play(listx, listo)
+        print("Match Draw")
+        return 2
     return -1
 
 entered=[]
