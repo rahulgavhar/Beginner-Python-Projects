@@ -106,25 +106,35 @@ def next_move():
                     corner_list=[]
                     if (listx[0]!=1 and listo[0]!=1):
                         corner_list.append(0)
-                        case="done"
                     if (listx[2]!=1 and listo[2]!=1):
                         corner_list.append(2)
-                        case="done"
                     if (listx[6]!=1 and listo[6]!=1):
                         corner_list.append(6)
-                        case="done"
                     if (listx[8]!=1 and listo[8]!=1):
                         corner_list.append(8)
-                        case="done"
-                    valuex=corner_list[randint(0,len(corner_list)-1)]+1
+                    if corner_list==[2,6]:
+                        if listo[1]!=1 and listo[5]!=1:
+                            corner_list.remove(6)
+                        if listo[3]!=1 and listo[7]!=1:
+                            corner_list.remove(2)
+                    if corner_list==[0,8]:
+                        if listo[1]!=1 and listo[3]!=1:
+                            corner_list.remove(8)
+                        if listo[5]!=1 and listo[7]!=1:
+                            corner_list.remove(0)
+                    if corner_list!=[]:
+                        valuex=corner_list[randint(0,len(corner_list)-1)]+1
+                        
+                    case="done"
                     break
                 except:
                     break
-        
-    if case=="random":
-        valuex=valid[randint(0,len(valid)-1)]
+    if valuex==None:
+        valuex=r.choice(valid)
         
 while True:
+    valuex=None
+    
     if turn == 1:
         sleep(1)
         print("\nComputer's Turn")
