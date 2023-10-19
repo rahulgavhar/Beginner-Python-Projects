@@ -31,7 +31,7 @@ def winstatus(listx, listo, valid):
     for win in win_cases:
         if(sum(listx[win[0]], listx[win[1]], listx[win[2]]) == 3):
             play(listx, listo)
-            print("X Won the match")
+            print("Computer Won the match")
             return 1
         if(sum(listo[win[0]], listo[win[1]], listo[win[2]]) == 3):
             play(listx, listo)
@@ -63,7 +63,7 @@ while True:
     except Exception:
         print()
     
-def final_move():
+def next_move():
     global valuex, valid
     one_move_cases=([0,1,2],[1,2,0],[0,2,1],[3,4,5],[4,5,3],[3,5,4],[6,7,8],[7,8,6],[6,8,7],[0,3,6],[3,6,0],[0,6,3],[1,4,7],[4,7,1],[1,7,4],[2,5,8],[5,8,2],[2,8,5],[0,4,8],[4,8,0],[0,8,4],[2,4,6],[4,6,2],[2,6,4])
     case="win"
@@ -80,7 +80,7 @@ def final_move():
                 continue
         
     if case=="draw":
-        case="random"
+        case="center"
         for x in one_move_cases:
             if sum(listo[x[0]],listo[x[1]],None)==2:
                 if listx[x[2]]!=1:
@@ -90,136 +90,38 @@ def final_move():
                 continue
             else:
                 continue
-        
+    if case=="center":
+        case="corner"
+        if (listx[4]!=1 and listo[4!=1]):
+            valuex=5
+            case="done"
+    if case=="corner":
+        case="random"
+        corner_list=[]
+        if (listx[0]!=1 and listo[0]!=1):
+            corner_list.append(0)
+            case="done"
+        if (listx[2]!=1 and listo[2]!=1):
+            corner_list.append(2)
+            case="done"
+        if (listx[6]!=1 and listo[6]!=1):
+            corner_list.append(6)
+            case="done"
+        if (listx[8]!=1 and listo[8]!=1):
+            corner_list.append(8)
+            case="done"
+        valuex=corner_list[randint(0,len(corner_list)-1)]+1
     if case=="random":
         valuex=valid[randint(0,len(valid)-1)]
         
 while True:
-    
     if turn == 1:
         sleep(1)
         print("\nComputer's Turn")
         sleep(2)
         #computer played first
-        if entered == []:
-            valuex=5
-        #computer player computer
-        elif xentered==[5] and (oentered==[1] or oentered==[3] or oentered==[7] or oentered==[9]):
-            case="condition 1"
-            if oentered==[1]:
-                valuex=9
-            elif oentered==[3]:
-                valuex=7
-            elif oentered==[7]:
-                valuex=3
-            elif oentered==[9]:
-                valuex=1
-        elif xentered==[5] and (oentered==[2] or oentered==[4] or oentered==[6] or oentered==[8]):
-            case="condition 2"
-            if oentered==[2]:
-                valuex=r.choice((1,3))
-            elif oentered==[4]:
-                valuex=r.choice((1,7))
-            elif oentered==[6]:
-                valuex=r.choice((3,9))
-            elif oentered==[8]:
-                valuex=r.choice((7,9))
-        #computer player computer player computer
-        elif case=="condition 1":
-            #win condition for computer
-            if xentered==[5,9] and (oentered==[1,4] or oentered==[1,2] or oentered==[1,8] or oentered==[1,6]):
-                if oentered==[1,4]:
-                    valuex=7
-                elif oentered==[1,2]:
-                    valuex=3
-                elif oentered==[1,8]:
-                    valuex=3
-                elif oentered==[1,6]:
-                    valuex=7
-            elif xentered==[5,7] and (oentered==[3,2] or oentered==[3,6] or oentered==[3,8] or oentered==[3,4]):
-                if oentered==[3,2]:
-                    valuex=1
-                elif oentered==[3,6]:
-                    valuex=9
-                elif oentered==[3,8]:
-                    valuex=1
-                elif oentered==[3,4]:
-                    valuex=9
-            elif xentered==[5,3] and (oentered==[7,8] or oentered==[7,4] or oentered==[7,2] or oentered==[7,6]):
-                if oentered==[7,8]:
-                    valuex=9
-                elif oentered==[7,4]:
-                    valuex=1
-                elif oentered==[7,6]:
-                    valuex=1
-                elif oentered==[7,2]:
-                    valuex=9
-            elif xentered==[5,1] and (oentered==[9,6] or oentered==[9,8] or oentered==[9,4] or oentered==[9,2]):
-                if oentered==[9,6]:
-                    valuex=3
-                elif oentered==[9,8]:
-                    valuex=7
-                elif oentered==[9,4]:
-                    valuex=3
-                elif oentered==[9,2]:
-                    valuex=7
-            #draw condition
-            elif xentered==[5,9] and (oentered==[1,7] or oentered==[1,3]):
-                if oentered==[1,7]:
-                    valuex=4
-                elif oentered==[1,3]:
-                    valuex=2
-            elif xentered==[5,7] and (oentered==[3,1] or oentered==[3,9]):
-                if oentered==[3,1]:
-                    valuex=2
-                elif oentered==[3,9]:
-                    valuex=6
-            elif xentered==[5,3] and (oentered==[7,1] or oentered==[7,9]):
-                if oentered==[7,1]:
-                    valuex=4
-                elif oentered==[7,9]:
-                    valuex=8
-            elif xentered==[5,1] and (oentered==[9,7] or oentered==[9,3]):
-                if oentered==[9,7]:
-                    valuex=8
-                elif oentered==[9,3]:
-                    valuex=6
-        elif case=="condition 2":
-            if (oentered==[2,9] and xentered==[5,1] ):
-                valuex=7
-            elif (oentered==[2,7] and xentered==[5,3]):
-                valuex=9
-            elif (oentered==[4,3] and xentered==[5,7] ):
-                valuex=9
-            elif (oentered==[4,9] and xentered==[5,1]):
-                valuex=3
-            elif (oentered==[6,1] and xentered==[5,9]):
-                valuex=7
-            elif (oentered==[6,3] and xentered==[5,7]):
-                valuex=1
-            elif (oentered==[8,3] and xentered==[5,7]):
-                valuex=1
-            elif (oentered==[8,1] and xentered==[5,9]):
-                valuex=3
-            
-            
-        #player computer
-        elif oentered == [5]:
-            valuex=r.choice((1,3,7,9))
-        elif oentered == [1] or oentered==[3] or oentered==[7] or oentered==[9]:
-            valuex=5
-        elif oentered == [2] or oentered==[4] or oentered==[6] or oentered==[8]:
-            valuex=5
         
-        #player computer player computer
-        elif (oentered == [1,9] and xentered==[5]) or (oentered==[3,7] and xentered==[5]):
-            valuex=2
-        elif oentered==[1,9] and xentered==[5,2]:
-            pass
-        
-        
-        if valuex==None:
-            final_move()
+        next_move()
             
         entered.append(valuex)
         xentered.append(valuex)
@@ -251,4 +153,3 @@ while True:
         break
     play(listx, listo)
     turn = 1 - turn
-    valuex=None
