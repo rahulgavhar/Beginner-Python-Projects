@@ -114,8 +114,7 @@ def next_move():
                         corner_list.append(8)
                     if len(corner_list)==1:
                         xx=corner_list[0]
-                        zz=0
-                        if zz!=1:
+                        if len(valid)!=1:
                             valid.remove(xx+1)
                         corner_list=[]
                     if len(corner_list)==2:
@@ -145,7 +144,7 @@ def next_move():
                         if corner_list==[2,6,8]:
                             valuex=8+1
                         break
-                    if zz==1:
+                    if len(valid)==1:
                         valid.append(xx)
                     case="done"
                     break
@@ -153,7 +152,6 @@ def next_move():
                     break
     if valuex==None:
         valuex=r.choice(valid)
-        zz=1
 while True:
     if turn == 1:
         sleep(1)
