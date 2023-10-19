@@ -114,6 +114,7 @@ def next_move():
                         corner_list.append(8)
                     if len(corner_list)==1:
                         xx=corner_list[0]
+                        zz=0
                         if zz!=1:
                             valid.remove(xx+1)
                         corner_list=[]
