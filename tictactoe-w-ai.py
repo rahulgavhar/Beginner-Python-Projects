@@ -92,7 +92,7 @@ def next_move():
                 continue
     if case=="center":
         case="corner"
-        if (listx[4]!=1 and listo[4!=1]):
+        if (listx[4]!=1 and listo[4]!=1):
             valuex=5
             case="done"
     if case=="corner":
