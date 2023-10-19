@@ -1,6 +1,7 @@
 # u cant win
 from time import sleep
 from random import randint
+import random as r
 
 def sum(a, b, c):
     if a!=None and b!=None and c!=None:
@@ -116,13 +117,13 @@ while True:
         elif xentered==[5] and (oentered==[2] or oentered==[4] or oentered==[6] or oentered==[8]):
             case="condition 2"
             if oentered==[2]:
-                valuex=randint(1,3)
+                valuex=r.choice((1,3))
             elif oentered==[4]:
-                valuex=randint(1,7)
+                valuex=r.choice((1,7))
             elif oentered==[6]:
-                valuex=randint(3,9)
+                valuex=r.choice((3,9))
             elif oentered==[8]:
-                valuex=randint(7,9)
+                valuex=r.choice((7,9))
         #computer player computer player computer
         elif case=="condition 1":
             #win condition for computer
@@ -204,7 +205,7 @@ while True:
             
         #player computer
         elif oentered == [5]:
-            valuex=randint(1,3,7,9)
+            valuex=r.choice((1,3,7,9))
         elif oentered == [1] or oentered==[3] or oentered==[7] or oentered==[9]:
             valuex=5
         elif oentered == [2] or oentered==[4] or oentered==[6] or oentered==[8]:
