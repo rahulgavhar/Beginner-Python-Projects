@@ -20,11 +20,11 @@ def play(listx, listo):
     eight = 'X' if listx[7]==1 else ('O' if listo[7]==1 else 8)
     nine = 'X' if listx[8]==1 else ('O' if listo[8]==1 else 9)
     print()
-    print(f"{one} | {two} | {three} ")
+    print(f"{seven} | {eight} | {nine} ")
     print(f"--|---|---")
     print(f"{four} | {five} | {six} ")
     print(f"--|---|---")
-    print(f"{seven} | {eight} | {nine} ")
+    print(f"{one} | {two} | {three} ")
 
 def winstatus(listx, listo, valid):
     win_cases = ([0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6])
@@ -113,7 +113,9 @@ def next_move():
                     if (listx[8]!=1 and listo[8]!=1):
                         corner_list.append(8)
                     if len(corner_list)==1:
-                        valid.remove(corner_list[0]+1)
+                        xx=corner_list[0]
+                        if zz!=1:
+                            valid.remove(xx+1)
                         corner_list=[]
                     if len(corner_list)==2:
                         if corner_list==[2,6]:
@@ -142,13 +144,15 @@ def next_move():
                         if corner_list==[2,6,8]:
                             valuex=8+1
                         break
+                    if zz==1:
+                        valid.append(xx)
                     case="done"
                     break
                 except:
                     break
     if valuex==None:
         valuex=r.choice(valid)
-        
+        zz=1
 while True:
     if turn == 1:
         sleep(1)
