@@ -112,19 +112,32 @@ def next_move():
                         corner_list.append(6)
                     if (listx[8]!=1 and listo[8]!=1):
                         corner_list.append(8)
-                    if corner_list==[2,6]:
-                        if listo[1]!=1 and listo[5]!=1:
-                            corner_list.remove(6)
-                        if listo[3]!=1 and listo[7]!=1:
-                            corner_list.remove(2)
-                    if corner_list==[0,8]:
-                        if listo[1]!=1 and listo[3]!=1:
-                            corner_list.remove(8)
-                        if listo[5]!=1 and listo[7]!=1:
-                            corner_list.remove(0)
+                    if len(corner_list)==1:
+                        corner_list=[]
+                        valid.remove(corner_list[0]+1)
+                    if len(corner_list)==2:
+                        if corner_list==[2,6]:
+                            if listo[1]!=1 and listo[5]!=1:
+                                corner_list.remove(6)
+                            if listo[3]!=1 and listo[7]!=1:
+                                corner_list.remove(2)
+                        if corner_list==[0,8]:
+                            if listo[1]!=1 and listo[3]!=1:
+                                corner_list.remove(8)
+                            if listo[5]!=1 and listo[7]!=1:
+                                corner_list.remove(0)
                     if corner_list!=[]:
                         valuex=corner_list[randint(0,len(corner_list)-1)]+1
-                        
+                    if len(corner_list)==3:
+                        if corner_list==[0,2,6]:
+                            valuex=0+1
+                        if corner_list==[0,2,8]:
+                            valuex=2+1
+                        if corner_list==[0,6,8]:
+                            valuex=6+1
+                        if corner_list==[2,6,8]:
+                            valuex=8+1
+                        break
                     case="done"
                     break
                 except:
@@ -133,8 +146,6 @@ def next_move():
         valuex=r.choice(valid)
         
 while True:
-    valuex=None
-    
     if turn == 1:
         sleep(1)
         print("\nComputer's Turn")
@@ -173,3 +184,4 @@ while True:
         break
     play(listx, listo)
     turn = 1 - turn
+    valuex=None
