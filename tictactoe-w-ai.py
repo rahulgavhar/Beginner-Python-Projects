@@ -113,8 +113,8 @@ def next_move():
                     if (listx[8]!=1 and listo[8]!=1):
                         corner_list.append(8)
                     if len(corner_list)==1:
-                        corner_list=[]
                         valid.remove(corner_list[0]+1)
+                        corner_list=[]
                     if len(corner_list)==2:
                         if corner_list==[2,6]:
                             if listo[1]!=1 and listo[5]!=1:
