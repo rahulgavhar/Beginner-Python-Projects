@@ -13,13 +13,13 @@ def play(listx, listo):
     eight = 'X' if listx[7]==1 else ('O' if listo[7]==1 else 8)
     nine = 'X' if listx[8]==1 else ('O' if listo[8]==1 else 9)
     print()
-    print(f"{one} | {two} | {three} ")
+    print(f"{seven} | {eight} | {nine} ")
     print(f"--|---|---")
     print(f"{four} | {five} | {six} ")
     print(f"--|---|---")
-    print(f"{seven} | {eight} | {nine} ")
+    print(f"{one} | {two} | {three} ")
 
-def winstatus(listx, listo):
+def winstatus(listx, listo, valid):
     win_cases = ([0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6])
     for win in win_cases:
         if(sum(listx[win[0]], listx[win[1]], listx[win[2]]) == 3):
@@ -30,17 +30,22 @@ def winstatus(listx, listo):
             play(listx, listo)
             print("O Won the match")
             return 0
+        if valid == []:
+            play(listx, listo)
+            print("Match Draw")
+            return 2
     return -1
 
 entered=[]
 total=[1,2,3,4,5,6,7,8,9]
+valid=[1,2,3,4,5,6,7,8,9]
 listx = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 listo = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 turn = randint(0, 1)
 print("Welcome to 2 Player TicTacToe Game")
 while True:
-    valid=[x for x in total if x not in entered]
-    play(listx, listo)
+    if entered == []:
+        play(listx, listo)
     if turn == 1:
         while True:
             try:
@@ -73,8 +78,9 @@ while True:
                 print(f"Please enter value from {valid}")
         entered.append(valueo)
         listo[valueo-1] = 1
-    cwin = winstatus(listx, listo)
+    valid=[x for x in total if x not in entered]
+    cwin = winstatus(listx, listo, valid)
     if cwin != -1:
         break
-    
+    play(listx, listo)
     turn = 1 - turn
