@@ -46,6 +46,7 @@ xentered=[]
 oentered=[]
 entered=[]
 total=[1,2,3,4,5,6,7,8,9]
+valid=[1,2,3,4,5,6,7,8,9]
 listx = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 listo = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 print("Welcome to TicTacToe Game (with AI)\n")
@@ -97,7 +98,7 @@ def next_move():
             case="done"
     if case=="corner":
         case="random"
-        if oentered==[1,9] or oentered==[3,7]:
+        if oentered==[1,9] or oentered==[3,7] or oentered==[9,1] or oentered==[7,3]:
             valuex=r.choice((2,4,6,8))
             case="side"
         if case!="side":
