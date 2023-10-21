@@ -132,6 +132,15 @@ def next_move():
                             valid.remove(corner_list[0]+1)
                             valid.remove(corner_list[1]+1)
                             corner_list=[]
+                    if len(corner_list)==3:
+                        if listo[1]==1 or listo[3]==1:
+                            valuex=0
+                        elif list[3]==1 or listo[7]==1:
+                            valuex=6
+                        elif list[7]==1 or listo[5]==1:
+                            valuex=8
+                        elif list[5]==1 or listo[1]==1:
+                            valuex=2
                     if len(corner_list)==4:
                         if listo[1]==1 and listo[3]==1:
                             corner_list.remove(8)
@@ -153,7 +162,7 @@ def next_move():
                         elif listo[7]==1:
                             corner_list.remove(6)
                             corner_list.remove(8)
-                    if corner_list!=[]:
+                    if corner_list!=[] and valuex==None:
                         valuex=corner_list[randint(0,len(corner_list)-1)]+1
                     
                     if len(corner_list)==1 and len(valid)==1:
