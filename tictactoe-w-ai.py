@@ -135,11 +135,11 @@ def next_move():
                     if len(corner_list)==3:
                         if listo[1]==1 or listo[3]==1:
                             valuex=1
-                        elif list[3]==1 or listo[7]==1:
+                        elif listo[3]==1 or listo[7]==1:
                             valuex=7
-                        elif list[7]==1 or listo[5]==1:
+                        elif listo[7]==1 or listo[5]==1:
                             valuex=9
-                        elif list[5]==1 or listo[1]==1:
+                        elif listo[5]==1 or listo[1]==1:
                             valuex=3
                     if len(corner_list)==4:
                         if listo[1]==1 and listo[3]==1:
