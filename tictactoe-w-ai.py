@@ -134,13 +134,13 @@ def next_move():
                             corner_list=[]
                     if len(corner_list)==3:
                         if listo[1]==1 or listo[3]==1:
-                            valuex=0
+                            valuex=1
                         elif list[3]==1 or listo[7]==1:
-                            valuex=6
+                            valuex=7
                         elif list[7]==1 or listo[5]==1:
-                            valuex=8
+                            valuex=9
                         elif list[5]==1 or listo[1]==1:
-                            valuex=2
+                            valuex=3
                     if len(corner_list)==4:
                         if listo[1]==1 and listo[3]==1:
                             corner_list.remove(8)
