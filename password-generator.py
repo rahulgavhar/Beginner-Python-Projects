@@ -101,11 +101,11 @@ elif purpose == "s":
                     except:
                         break
             
+            while "" in sc:
+                sc.remove("")
             if len(sc) == 0:
                 print("Please enter atleast 1 keyword.")
                 continue
-            while "" in sc:
-                sc.remove("")
             print("\nKeywords entered: ",sc)
             print("\nPasswords found: ")
             count=0
