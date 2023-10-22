@@ -126,5 +126,6 @@ elif purpose == "s":
                     continue
                 else:
                     break
+            break
         except Exception as e:
             print("Error Occured: ",e)
