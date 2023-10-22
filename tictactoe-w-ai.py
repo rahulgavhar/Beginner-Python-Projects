@@ -53,10 +53,10 @@ print("Welcome to TicTacToe Game (with AI)\n")
 print("Do you want to play first")
 while True:
     try:
-        choice=input("(Enter 'yes'/'no' to continue): ")
-        if choice=="yes":
+        choice=input("(Enter 'y'/'n' to continue): ")
+        if choice=="y":
             turn=0
-        elif choice=="no":
+        elif choice=="n":
             turn=1
         else:
             raise Exception
@@ -175,9 +175,9 @@ def next_move():
         valuex=r.choice(valid)
 while True:
     if turn == 1:
-        sleep(1)
+        sleep(0.5)
         print("\nComputer's Turn")
-        sleep(1)
+        sleep(0.2)
         #computer played first
         
         next_move()
